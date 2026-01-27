@@ -126,40 +126,32 @@ def upsert_records(journal: List[Dict], records: List[Dict]) -> Tuple[List[Dict]
     for record in records:
         task_id = record["task_id"]
         entry = entry_by_task.get(task_id)
-        action = "add"
         if entry is None:
             entry = {"task_id": task_id, "trajectory_records": []}
             journal.append(entry)
             entry_by_task[task_id] = entry
-        else:
-            action = "update"
 
-        existing_idx = None
-        for idx, existing in enumerate(entry.get("trajectory_records", [])):
-            if existing.get("agent") == record["agent"] and existing.get("model") == record["model"]:
-                existing_idx = idx
-                break
+        existing_records = entry.get("trajectory_records", [])
+        already_present = any(
+            existing.get("agent") == record["agent"]
+            and existing.get("model") == record["model"]
+            and existing.get("reward") == record["reward"]
+            and existing.get("path") == record["path"]
+            for existing in existing_records
+        )
 
-        if existing_idx is None:
-            entry.setdefault("trajectory_records", []).append(
-                {
-                    "agent": record["agent"],
-                    "model": record["model"],
-                    "reward": record["reward"],
-                    "path": record["path"],
-                }
-            )
-            changes.append({"action": "add", **record})
-        else:
-            existing = entry["trajectory_records"][existing_idx]
-            if existing.get("reward") != record["reward"] or existing.get("path") != record["path"]:
-                entry["trajectory_records"][existing_idx] = {
-                    "agent": record["agent"],
-                    "model": record["model"],
-                    "reward": record["reward"],
-                    "path": record["path"],
-                }
-                changes.append({"action": action, **record})
+        if already_present:
+            continue
+
+        entry.setdefault("trajectory_records", []).append(
+            {
+                "agent": record["agent"],
+                "model": record["model"],
+                "reward": record["reward"],
+                "path": record["path"],
+            }
+        )
+        changes.append({"action": "add", **record})
 
     return journal, changes
 

@@ -447,6 +447,12 @@
         "model": "gpt-5-mini-2025-08-07",
         "reward": 0,
         "path": "/home/diwu/ralm/LongMemEval-V2-Workspace/enterprise/data/trajectories/20260121_import/2025-10-20_13-53-48_genericagent-gpt-5-mini-2025-08-07-on-workarena-l1/2025-10-20_13-53-49_GenericAgent-gpt-5-mini-2025-08-07_on_workarena.servicenow.create-change-request_58"
+      },
+      {
+        "agent": "genericagent",
+        "model": "gpt-5-mini-2025-08-07",
+        "reward": 1,
+        "path": "/local/diwu/longmemeval-v2-data/workarena/successful_rerun_trajectories/l1/2026-01-27_14-56-46_GenericAgent-gpt-5-mini-2025-08-07-re-high_on_workarena.servicenow.create-change-request_58"
       }
     ]
   },
@@ -524,6 +530,12 @@
         "model": "gpt-5-mini-2025-08-07",
         "reward": 0,
         "path": "/home/diwu/ralm/LongMemEval-V2-Workspace/enterprise/data/trajectories/20260121_import/2025-10-20_13-53-48_genericagent-gpt-5-mini-2025-08-07-on-workarena-l1/2025-10-20_13-53-49_GenericAgent-gpt-5-mini-2025-08-07_on_workarena.servicenow.create-change-request_189"
+      },
+      {
+        "agent": "genericagent",
+        "model": "gpt-5-mini-2025-08-07",
+        "reward": 1,
+        "path": "/local/diwu/longmemeval-v2-data/workarena/successful_rerun_trajectories/l1/2026-01-27_14-56-46_GenericAgent-gpt-5-mini-2025-08-07-re-high_on_workarena.servicenow.create-change-request_189"
       }
     ]
   },
