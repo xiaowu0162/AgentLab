@@ -24,35 +24,60 @@ from agentlab.experiments.study import make_study
 from agentlab.llm.llm_configs import CHAT_MODEL_ARGS_DICT, GPT5_REASONING_EFFORT_BY_MODEL
 
 # Update this list with the exact task base IDs you want to run.
-TASK_IDS = [
-    # Auto-selected L1 tasks without successful trajectories in the journal.
-    "workarena.servicenow.all-menu_797",
-    "workarena.servicenow.create-change-request_189",
-    "workarena.servicenow.create-change-request_510",
-    "workarena.servicenow.create-change-request_58",
-    "workarena.servicenow.create-change-request_686",
-    "workarena.servicenow.create-hardware-asset_13",
-    "workarena.servicenow.create-hardware-asset_166",
-    "workarena.servicenow.create-hardware-asset_20",
-    "workarena.servicenow.create-hardware-asset_241",
-    "workarena.servicenow.create-hardware-asset_273",
-]
+TASK_IDS = []
 
 # Choose the model to rerun with (must exist in CHAT_MODEL_ARGS_DICT).
 MODEL_NAME = "openai/gpt-5-mini-2025-08-07"
 REASONING_EFFORT_OVERRIDE = "high"  # highest supported for GPT-5 mini
 
 # Number of parallel jobs
-n_jobs = 1
+n_jobs = 4
 parallel_backend = "ray"
 avg_step_timeout = 1200  # seconds per step used for Ray cancel timeout
 max_steps = 50  # override WorkArena default episode length (was 15 in your env)
+TASK_TIMEOUT_SECONDS = 50 * 60  # per-task wall-clock timeout (Ray cancel)
 
 # Benchmark to run (change as needed)
 # BENCHMARK_NAME = "workarena_l2_agent_curriculum_eval"
-BENCHMARK_NAME = "workarena_l1"
+BENCHMARK_NAME = "workarena_l2_agent_curriculum_eval"
 
 if __name__ == "__main__":
+    import argparse
+    import json
+
+    os.environ.setdefault("OPENAI_API_KEY", "")
+    parser = argparse.ArgumentParser(
+        description="Run GenericAgent on a user-specified WorkArena task list."
+    )
+    parser.add_argument(
+        "--task-ids-json",
+        default=None,
+        help="Path to JSON list of task IDs to run.",
+    )
+    parser.add_argument(
+        "--task-ids",
+        default=None,
+        help="Comma-separated task IDs to run.",
+    )
+    parser.add_argument(
+        "--task-timeout-seconds",
+        type=int,
+        default=TASK_TIMEOUT_SECONDS,
+        help="Per-task wall-clock timeout in seconds (0 or negative to disable).",
+    )
+    args, _ = parser.parse_known_args()
+
+    if args.task_ids_json and args.task_ids:
+        raise SystemExit("Use only one of --task-ids-json or --task-ids.")
+
+    if args.task_ids_json:
+        with open(args.task_ids_json, "r", encoding="utf-8") as f:
+            task_ids = json.load(f)
+        if not isinstance(task_ids, list) or not all(isinstance(t, str) for t in task_ids):
+            raise SystemExit("--task-ids-json must contain a JSON list of strings.")
+    elif args.task_ids:
+        task_ids = [t.strip() for t in args.task_ids.split(",") if t.strip()]
+
     def _full_task_id(env_args) -> str:
         task_seed = getattr(env_args, "task_seed", None)
         if task_seed is None:
@@ -94,11 +119,11 @@ if __name__ == "__main__":
 
     benchmark = bgym.DEFAULT_BENCHMARKS[BENCHMARK_NAME]()
 
-    if TASK_IDS:
+    if task_ids:
         benchmark.env_args_list = [
             env_args
             for env_args in benchmark.env_args_list
-            if _full_task_id(env_args) in TASK_IDS
+            if _full_task_id(env_args) in task_ids
         ]
 
     if successful_task_ids:
@@ -121,6 +146,10 @@ if __name__ == "__main__":
         agent_args=[generic_agent],
         comment=f"generic rerun ({MODEL_NAME})",
     )
+    if args.task_timeout_seconds and args.task_timeout_seconds > 0:
+        for exp_args in study.exp_args_list:
+            exp_args.episode_timeout = args.task_timeout_seconds
+        print(f"Per-task timeout set to {args.task_timeout_seconds}s")
     study.avg_step_timeout = avg_step_timeout
     study.run(
         n_jobs=n_jobs,
