@@ -32,7 +32,8 @@ from agentlab.experiments.study import make_study
 #     handler.setLevel(logging.DEBUG)
 # logging.getLogger("agentlab.agents.cheating_agent").setLevel(logging.DEBUG)
 
-benchmarks = ["workarena_l1", "workarena_l2_agent_curriculum_eval", "workarena_l3_agent_curriculum_eval"]
+# benchmarks = ["workarena_l1", "workarena_l2_agent_curriculum_eval", "workarena_l3_agent_curriculum_eval"]
+benchmarks = ["workarena_l3_agent_curriculum_eval"]
 
 # Number of parallel jobs
 n_jobs = 50
