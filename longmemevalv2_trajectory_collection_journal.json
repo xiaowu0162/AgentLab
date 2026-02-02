@@ -5584,6 +5584,12 @@
         "model": "gpt-5-mini-2025-08-07",
         "reward": 0,
         "path": "/home/diwu/ralm/LongMemEval-V2-Workspace/enterprise/data/trajectories/20260121_import/2025-11-02_22-27-49_genericagent-gpt-5-mini-2025-08-07-on-workarena-l2-agent-curriculum-eval/2025-11-02_22-27-51_GenericAgent-gpt-5-mini-2025-08-07_on_workarena.servicenow.off-board-user-l2_214"
+      },
+      {
+        "agent": "genericagent",
+        "model": "gpt-5-mini-2025-08-07",
+        "reward": 1,
+        "path": "/local/diwu/longmemeval-v2-data/workarena/successful_rerun_trajectories/l2/2026-02-01_22-07-49_GenericAgent-gpt-5-mini-2025-08-07-re-high_on_workarena.servicenow.off-board-user-l2_214"
       }
     ]
   },
@@ -5612,6 +5618,12 @@
         "model": "gpt-5-mini-2025-08-07",
         "reward": 0,
         "path": "/home/diwu/ralm/LongMemEval-V2-Workspace/enterprise/data/trajectories/20260121_import/2025-11-02_22-27-49_genericagent-gpt-5-mini-2025-08-07-on-workarena-l2-agent-curriculum-eval/2025-11-02_22-27-51_GenericAgent-gpt-5-mini-2025-08-07_on_workarena.servicenow.navigate-and-create-incident-l2_330"
+      },
+      {
+        "agent": "genericagent",
+        "model": "gpt-5-mini-2025-08-07",
+        "reward": 1,
+        "path": "/local/diwu/longmemeval-v2-data/workarena/successful_rerun_trajectories/l2/2026-02-01_22-07-49_GenericAgent-gpt-5-mini-2025-08-07-re-high_on_workarena.servicenow.navigate-and-create-incident-l2_330"
       }
     ]
   },
@@ -6032,6 +6044,12 @@
         "model": "gpt-5-mini-2025-08-07",
         "reward": 0,
         "path": "/home/diwu/ralm/LongMemEval-V2-Workspace/enterprise/data/trajectories/20260121_import/2025-11-02_22-27-49_genericagent-gpt-5-mini-2025-08-07-on-workarena-l2-agent-curriculum-eval/2025-11-02_22-27-51_GenericAgent-gpt-5-mini-2025-08-07_on_workarena.servicenow.infeasible-navigate-and-create-hardware-asset-with-reason-l2_663"
+      },
+      {
+        "agent": "genericagent",
+        "model": "gpt-5-mini-2025-08-07",
+        "reward": 1,
+        "path": "/local/diwu/longmemeval-v2-data/workarena/successful_rerun_trajectories/l2/2026-02-01_22-07-49_GenericAgent-gpt-5-mini-2025-08-07-re-high_on_workarena.servicenow.infeasible-navigate-and-create-hardware-asset-with-reason-l2_663"
       }
     ]
   },
