@@ -45,7 +45,12 @@ if __name__ == "__main__":
     import argparse
     import json
 
-    os.environ.setdefault("OPENAI_API_KEY", "")
+    from pathlib import Path
+
+    from dotenv import load_dotenv
+
+    load_dotenv(Path(__file__).resolve().parent / ".env", override=False)
+
     parser = argparse.ArgumentParser(
         description="Run GenericAgent on a user-specified WorkArena task list."
     )
