@@ -96,7 +96,7 @@ def main() -> int:
         description="Automate WorkArena L2 rerun pipeline."
     )
     parser.add_argument("--failed-json", type=Path, default=default_failed)
-    parser.add_argument("--limit", type=int, default=81)
+    parser.add_argument("--limit", type=int, default=68)
     parser.add_argument(
         "--task-ids-out",
         type=Path,
