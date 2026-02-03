@@ -4190,6 +4190,12 @@
         "model": "gpt-5-mini-2025-08-07",
         "reward": 0,
         "path": "/home/diwu/ralm/LongMemEval-V2-Workspace/enterprise/data/trajectories/20260121_import/2025-11-02_22-27-49_genericagent-gpt-5-mini-2025-08-07-on-workarena-l2-agent-curriculum-eval/2025-11-02_22-27-50_GenericAgent-gpt-5-mini-2025-08-07_on_workarena.servicenow.dashboard-retrieve-incident-and-min-filter-asset-list-l2_860"
+      },
+      {
+        "agent": "genericagent",
+        "model": "gpt-5.2",
+        "reward": 1,
+        "path": "/local/diwu/longmemeval-v2-data/workarena/successful_rerun_trajectories/l2/2026-02-02_15-37-11_GenericAgent-gpt-5.2-re-high_on_workarena.servicenow.dashboard-retrieve-incident-and-min-filter-asset-list-l2_860"
       }
     ]
   },
@@ -4201,6 +4207,12 @@
         "model": "gpt-5-mini-2025-08-07",
         "reward": 0,
         "path": "/home/diwu/ralm/LongMemEval-V2-Workspace/enterprise/data/trajectories/20260121_import/2025-11-02_22-27-49_genericagent-gpt-5-mini-2025-08-07-on-workarena-l2-agent-curriculum-eval/2025-11-02_22-27-50_GenericAgent-gpt-5-mini-2025-08-07_on_workarena.servicenow.dashboard-retrieve-incident-and-max-filter-hardware-list-l2_860"
+      },
+      {
+        "agent": "genericagent",
+        "model": "gpt-5.2",
+        "reward": 1,
+        "path": "/local/diwu/longmemeval-v2-data/workarena/successful_rerun_trajectories/l2/2026-02-02_16-12-44_GenericAgent-gpt-5.2-re-high_on_workarena.servicenow.dashboard-retrieve-incident-and-max-filter-hardware-list-l2_860"
       }
     ]
   },
@@ -4890,6 +4902,12 @@
         "model": "gpt-5-mini-2025-08-07",
         "reward": 0,
         "path": "/home/diwu/ralm/LongMemEval-V2-Workspace/enterprise/data/trajectories/20260121_import/2025-11-02_22-27-49_genericagent-gpt-5-mini-2025-08-07-on-workarena-l2-agent-curriculum-eval/2025-11-02_22-27-51_GenericAgent-gpt-5-mini-2025-08-07_on_workarena.servicenow.easy-expense-management-large-l2_121"
+      },
+      {
+        "agent": "genericagent",
+        "model": "gpt-5.2",
+        "reward": 1,
+        "path": "/local/diwu/longmemeval-v2-data/workarena/successful_rerun_trajectories/l2/2026-02-02_11-54-12_GenericAgent-gpt-5.2-re-high_on_workarena.servicenow.easy-expense-management-large-l2_121"
       }
     ]
   },
@@ -4923,6 +4941,12 @@
         "model": "gpt-5-mini-2025-08-07",
         "reward": 0,
         "path": "/home/diwu/ralm/LongMemEval-V2-Workspace/enterprise/data/trajectories/20260121_import/2025-11-02_22-27-49_genericagent-gpt-5-mini-2025-08-07-on-workarena-l2-agent-curriculum-eval/2025-11-02_22-27-51_GenericAgent-gpt-5-mini-2025-08-07_on_workarena.servicenow.date-based-expense-management-large-l2_121"
+      },
+      {
+        "agent": "genericagent",
+        "model": "gpt-5.2",
+        "reward": 1,
+        "path": "/local/diwu/longmemeval-v2-data/workarena/successful_rerun_trajectories/l2/2026-02-02_16-12-44_GenericAgent-gpt-5.2-re-high_on_workarena.servicenow.date-based-expense-management-large-l2_121"
       }
     ]
   },
@@ -4989,6 +5013,12 @@
         "model": "gpt-5-mini-2025-08-07",
         "reward": 0,
         "path": "/home/diwu/ralm/LongMemEval-V2-Workspace/enterprise/data/trajectories/20260121_import/2025-11-02_22-27-49_genericagent-gpt-5-mini-2025-08-07-on-workarena-l2-agent-curriculum-eval/2025-11-02_22-27-51_GenericAgent-gpt-5-mini-2025-08-07_on_workarena.servicenow.filter-random-expenses-find-total-return-and-select-investments-medium-l2_121"
+      },
+      {
+        "agent": "genericagent",
+        "model": "gpt-5.2",
+        "reward": 1,
+        "path": "/local/diwu/longmemeval-v2-data/workarena/successful_rerun_trajectories/l2/2026-02-02_11-54-12_GenericAgent-gpt-5.2-re-high_on_workarena.servicenow.filter-random-expenses-find-total-return-and-select-investments-medium-l2_121"
       }
     ]
   },
@@ -5022,6 +5052,12 @@
         "model": "gpt-5-mini-2025-08-07",
         "reward": 0,
         "path": "/home/diwu/ralm/LongMemEval-V2-Workspace/enterprise/data/trajectories/20260121_import/2025-11-02_22-27-49_genericagent-gpt-5-mini-2025-08-07-on-workarena-l2-agent-curriculum-eval/2025-11-02_22-27-51_GenericAgent-gpt-5-mini-2025-08-07_on_workarena.servicenow.filter-single-item-uniform-expenses-and-delete-wrong-investments-small-l2_121"
+      },
+      {
+        "agent": "genericagent",
+        "model": "gpt-5.2",
+        "reward": 1,
+        "path": "/local/diwu/longmemeval-v2-data/workarena/successful_rerun_trajectories/l2/2026-02-02_11-54-12_GenericAgent-gpt-5.2-re-high_on_workarena.servicenow.filter-single-item-uniform-expenses-and-delete-wrong-investments-small-l2_121"
       }
     ]
   },
@@ -5088,6 +5124,12 @@
         "model": "gpt-5-mini-2025-08-07",
         "reward": 0,
         "path": "/home/diwu/ralm/LongMemEval-V2-Workspace/enterprise/data/trajectories/20260121_import/2025-11-02_22-27-49_genericagent-gpt-5-mini-2025-08-07-on-workarena-l2-agent-curriculum-eval/2025-11-02_22-27-51_GenericAgent-gpt-5-mini-2025-08-07_on_workarena.servicenow.filter-random-expenses-and-select-investments-large-l2_121"
+      },
+      {
+        "agent": "genericagent",
+        "model": "gpt-5.2",
+        "reward": 1,
+        "path": "/local/diwu/longmemeval-v2-data/workarena/successful_rerun_trajectories/l2/2026-02-02_15-37-11_GenericAgent-gpt-5.2-re-high_on_workarena.servicenow.filter-random-expenses-and-select-investments-large-l2_121"
       }
     ]
   },
@@ -5176,6 +5218,12 @@
         "model": "gpt-5-mini-2025-08-07",
         "reward": 0,
         "path": "/home/diwu/ralm/LongMemEval-V2-Workspace/enterprise/data/trajectories/20260121_import/2025-11-02_22-27-49_genericagent-gpt-5-mini-2025-08-07-on-workarena-l2-agent-curriculum-eval/2025-11-02_22-27-51_GenericAgent-gpt-5-mini-2025-08-07_on_workarena.servicenow.filter-random-expenses-and-delete-wrong-investments-medium-l2_121"
+      },
+      {
+        "agent": "genericagent",
+        "model": "gpt-5.2",
+        "reward": 1,
+        "path": "/local/diwu/longmemeval-v2-data/workarena/successful_rerun_trajectories/l2/2026-02-02_11-54-12_GenericAgent-gpt-5.2-re-high_on_workarena.servicenow.filter-random-expenses-and-delete-wrong-investments-medium-l2_121"
       }
     ]
   },
@@ -5187,6 +5235,12 @@
         "model": "gpt-5-mini-2025-08-07",
         "reward": 0,
         "path": "/home/diwu/ralm/LongMemEval-V2-Workspace/enterprise/data/trajectories/20260121_import/2025-11-02_22-27-49_genericagent-gpt-5-mini-2025-08-07-on-workarena-l2-agent-curriculum-eval/2025-11-02_22-27-51_GenericAgent-gpt-5-mini-2025-08-07_on_workarena.servicenow.filter-random-expenses-and-find-total-return-large-l2_121"
+      },
+      {
+        "agent": "genericagent",
+        "model": "gpt-5.2",
+        "reward": 1,
+        "path": "/local/diwu/longmemeval-v2-data/workarena/successful_rerun_trajectories/l2/2026-02-02_11-54-12_GenericAgent-gpt-5.2-re-high_on_workarena.servicenow.filter-random-expenses-and-find-total-return-large-l2_121"
       }
     ]
   },
@@ -5220,6 +5274,12 @@
         "model": "gpt-5-mini-2025-08-07",
         "reward": 0,
         "path": "/home/diwu/ralm/LongMemEval-V2-Workspace/enterprise/data/trajectories/20260121_import/2025-11-02_22-27-49_genericagent-gpt-5-mini-2025-08-07-on-workarena-l2-agent-curriculum-eval/2025-11-02_22-27-51_GenericAgent-gpt-5-mini-2025-08-07_on_workarena.servicenow.filter-random-expenses-and-find-total-return-medium-l2_121"
+      },
+      {
+        "agent": "genericagent",
+        "model": "gpt-5.2",
+        "reward": 1,
+        "path": "/local/diwu/longmemeval-v2-data/workarena/successful_rerun_trajectories/l2/2026-02-02_11-54-12_GenericAgent-gpt-5.2-re-high_on_workarena.servicenow.filter-random-expenses-and-find-total-return-medium-l2_121"
       }
     ]
   },
@@ -5259,6 +5319,12 @@
         "model": "gpt-5-mini-2025-08-07",
         "reward": 0,
         "path": "/home/diwu/ralm/LongMemEval-V2-Workspace/enterprise/data/trajectories/20260121_import/2025-11-02_22-27-49_genericagent-gpt-5-mini-2025-08-07-on-workarena-l2-agent-curriculum-eval/2025-11-02_22-27-51_GenericAgent-gpt-5-mini-2025-08-07_on_workarena.servicenow.filter-random-expenses-and-select-investments-medium-l2_121"
+      },
+      {
+        "agent": "genericagent",
+        "model": "gpt-5.2",
+        "reward": 1,
+        "path": "/local/diwu/longmemeval-v2-data/workarena/successful_rerun_trajectories/l2/2026-02-02_11-54-12_GenericAgent-gpt-5.2-re-high_on_workarena.servicenow.filter-random-expenses-and-select-investments-medium-l2_121"
       }
     ]
   },
@@ -5518,6 +5584,12 @@
         "model": "gpt-5-mini-2025-08-07",
         "reward": 0,
         "path": "/home/diwu/ralm/LongMemEval-V2-Workspace/enterprise/data/trajectories/20260121_import/2025-11-02_22-27-49_genericagent-gpt-5-mini-2025-08-07-on-workarena-l2-agent-curriculum-eval/2025-11-02_22-27-51_GenericAgent-gpt-5-mini-2025-08-07_on_workarena.servicenow.off-board-user-l2_466"
+      },
+      {
+        "agent": "genericagent",
+        "model": "gpt-5.2",
+        "reward": 1,
+        "path": "/local/diwu/longmemeval-v2-data/workarena/successful_rerun_trajectories/l2/2026-02-02_11-54-12_GenericAgent-gpt-5.2-re-high_on_workarena.servicenow.off-board-user-l2_466"
       }
     ]
   },
@@ -5668,6 +5740,12 @@
         "model": "gpt-5-mini-2025-08-07",
         "reward": 0,
         "path": "/home/diwu/ralm/LongMemEval-V2-Workspace/enterprise/data/trajectories/20260121_import/2025-11-02_22-27-49_genericagent-gpt-5-mini-2025-08-07-on-workarena-l2-agent-curriculum-eval/2025-11-02_22-27-51_GenericAgent-gpt-5-mini-2025-08-07_on_workarena.servicenow.off-board-user-l2_330"
+      },
+      {
+        "agent": "genericagent",
+        "model": "gpt-5.2",
+        "reward": 1,
+        "path": "/local/diwu/longmemeval-v2-data/workarena/successful_rerun_trajectories/l2/2026-02-02_11-54-12_GenericAgent-gpt-5.2-re-high_on_workarena.servicenow.off-board-user-l2_330"
       }
     ]
   },
@@ -5734,6 +5812,12 @@
         "model": "gpt-5-mini-2025-08-07",
         "reward": 0,
         "path": "/home/diwu/ralm/LongMemEval-V2-Workspace/enterprise/data/trajectories/20260121_import/2025-11-02_22-27-49_genericagent-gpt-5-mini-2025-08-07-on-workarena-l2-agent-curriculum-eval/2025-11-02_22-27-51_GenericAgent-gpt-5-mini-2025-08-07_on_workarena.servicenow.off-board-user-l2_458"
+      },
+      {
+        "agent": "genericagent",
+        "model": "gpt-5.2",
+        "reward": 1,
+        "path": "/local/diwu/longmemeval-v2-data/workarena/successful_rerun_trajectories/l2/2026-02-02_16-12-44_GenericAgent-gpt-5.2-re-high_on_workarena.servicenow.off-board-user-l2_458"
       }
     ]
   },
@@ -5812,6 +5896,12 @@
         "model": "gpt-5-mini-2025-08-07",
         "reward": 0,
         "path": "/home/diwu/ralm/LongMemEval-V2-Workspace/enterprise/data/trajectories/20260121_import/2025-11-02_22-27-49_genericagent-gpt-5-mini-2025-08-07-on-workarena-l2-agent-curriculum-eval/2025-11-02_22-27-51_GenericAgent-gpt-5-mini-2025-08-07_on_workarena.servicenow.off-board-user-l2_87"
+      },
+      {
+        "agent": "genericagent",
+        "model": "gpt-5.2",
+        "reward": 1,
+        "path": "/local/diwu/longmemeval-v2-data/workarena/successful_rerun_trajectories/l2/2026-02-02_11-54-12_GenericAgent-gpt-5.2-re-high_on_workarena.servicenow.off-board-user-l2_87"
       }
     ]
   },
@@ -5939,6 +6029,12 @@
         "model": "gpt-5-mini-2025-08-07",
         "reward": 0,
         "path": "/home/diwu/ralm/LongMemEval-V2-Workspace/enterprise/data/trajectories/20260121_import/2025-11-02_22-27-49_genericagent-gpt-5-mini-2025-08-07-on-workarena-l2-agent-curriculum-eval/2025-11-02_22-27-51_GenericAgent-gpt-5-mini-2025-08-07_on_workarena.servicenow.navigate-and-sort-user-list-l2_99"
+      },
+      {
+        "agent": "genericagent",
+        "model": "gpt-5.2",
+        "reward": 1,
+        "path": "/local/diwu/longmemeval-v2-data/workarena/successful_rerun_trajectories/l2/2026-02-02_11-54-12_GenericAgent-gpt-5.2-re-high_on_workarena.servicenow.navigate-and-sort-user-list-l2_99"
       }
     ]
   },
@@ -5961,6 +6057,12 @@
         "model": "gpt-5-mini-2025-08-07",
         "reward": 0,
         "path": "/home/diwu/ralm/LongMemEval-V2-Workspace/enterprise/data/trajectories/20260121_import/2025-11-02_22-27-49_genericagent-gpt-5-mini-2025-08-07-on-workarena-l2-agent-curriculum-eval/2025-11-02_22-27-51_GenericAgent-gpt-5-mini-2025-08-07_on_workarena.servicenow.on-board-user-l2_99"
+      },
+      {
+        "agent": "genericagent",
+        "model": "gpt-5.2",
+        "reward": 1,
+        "path": "/local/diwu/longmemeval-v2-data/workarena/successful_rerun_trajectories/l2/2026-02-02_11-54-12_GenericAgent-gpt-5.2-re-high_on_workarena.servicenow.on-board-user-l2_99"
       }
     ]
   },
