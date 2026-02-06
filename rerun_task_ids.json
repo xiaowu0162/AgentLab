@@ -1,6 +1,5 @@
 [
   "workarena.servicenow.dashboard-retrieve-incident-and-max-filter-hardware-list-l2_700",
-  "workarena.servicenow.dashboard-retrieve-incident-and-max-filter-hardware-list-l2_860",
   "workarena.servicenow.dashboard-retrieve-incident-and-max-filter-incident-list-l2_106",
   "workarena.servicenow.dashboard-retrieve-incident-and-max-filter-incident-list-l2_20",
   "workarena.servicenow.dashboard-retrieve-incident-and-max-filter-incident-list-l2_270",
@@ -12,7 +11,6 @@
   "workarena.servicenow.dashboard-retrieve-incident-and-min-filter-hardware-list-l2_700",
   "workarena.servicenow.dashboard-retrieve-incident-and-min-filter-user-list-l2_71",
   "workarena.servicenow.dashboard-retrieve-incident-and-mode-greater-filter-incident-list-l2_121",
-  "workarena.servicenow.date-based-expense-management-large-l2_121",
   "workarena.servicenow.filter-single-item-expenses-and-delete-wrong-investments-large-l2_121",
   "workarena.servicenow.infeasible-navigate-and-create-hardware-asset-with-reason-l2_308",
   "workarena.servicenow.infeasible-navigate-and-create-user-with-reason-l2_130",
@@ -38,7 +36,6 @@
   "workarena.servicenow.navigate-and-sort-service-catalog-item-list-l2_214",
   "workarena.servicenow.navigate-and-sort-user-list-l2_458",
   "workarena.servicenow.navigate-and-sort-user-list-l2_466",
-  "workarena.servicenow.off-board-user-l2_458",
   "workarena.servicenow.off-board-user-l2_871",
   "workarena.servicenow.off-board-user-l2_99",
   "workarena.servicenow.dashboard-retrieve-incident-and-max-filter-asset-list-l2_614"

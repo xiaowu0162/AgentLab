@@ -27,7 +27,7 @@ from agentlab.llm.llm_configs import CHAT_MODEL_ARGS_DICT, GPT5_REASONING_EFFORT
 TASK_IDS = []
 
 # Choose the model to rerun with (must exist in CHAT_MODEL_ARGS_DICT).
-MODEL_NAME = "openai/gpt-5.2"
+MODEL_NAME = "openai/gpt-5-mini-2025-08-07"
 REASONING_EFFORT_OVERRIDE = "high"  # highest supported for GPT-5 mini
 
 # Number of parallel jobs
@@ -39,7 +39,7 @@ TASK_TIMEOUT_SECONDS = 50 * 60  # per-task wall-clock timeout (Ray cancel)
 
 # Benchmark to run (change as needed)
 # BENCHMARK_NAME = "workarena_l2_agent_curriculum_eval"
-BENCHMARK_NAME = "workarena_l2_agent_curriculum_eval"
+BENCHMARK_NAME = "workarena_l3_agent_curriculum_eval"
 
 if __name__ == "__main__":
     import argparse
