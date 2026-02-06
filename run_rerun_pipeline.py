@@ -121,7 +121,7 @@ def main() -> int:
     parser.add_argument(
         "--task-timeout-seconds",
         type=int,
-        default=40 * 60,
+        default=60 * 60,
         help="Per-task wall-clock timeout in seconds (0 or negative to disable).",
     )
     parser.add_argument(

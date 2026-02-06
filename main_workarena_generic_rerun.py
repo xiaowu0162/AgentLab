@@ -34,7 +34,7 @@ REASONING_EFFORT_OVERRIDE = "high"  # highest supported for GPT-5 mini
 n_jobs = 4
 parallel_backend = "ray"
 avg_step_timeout = 1200  # seconds per step used for Ray cancel timeout
-max_steps = 50  # override WorkArena default episode length (was 15 in your env)
+max_steps = 100  # override WorkArena default episode length (was 15 in your env)
 TASK_TIMEOUT_SECONDS = 50 * 60  # per-task wall-clock timeout (Ray cancel)
 
 # Benchmark to run (change as needed)
@@ -49,7 +49,7 @@ if __name__ == "__main__":
 
     from dotenv import load_dotenv
 
-    load_dotenv(Path(__file__).resolve().parent / ".env", override=False)
+    load_dotenv(Path(__file__).resolve().parent / ".env", override=True)
 
     parser = argparse.ArgumentParser(
         description="Run GenericAgent on a user-specified WorkArena task list."
