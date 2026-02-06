@@ -6618,7 +6618,14 @@
   },
   {
     "task_id": "workarena.servicenow.three-changes-fix-wide-priority-varied-risk-change-request-scheduling-l3_102",
-    "trajectory_records": []
+    "trajectory_records": [
+      {
+        "agent": "manualactionagent",
+        "model": "manual",
+        "reward": 1,
+        "path": "/local/diwu/longmemeval-v2-data/workarena/successful_rerun_trajectories/l3/2026-02-06_10-43-23_ManualActionAgent_on_workarena.servicenow.three-changes-fix-wide-priority-varied-risk-change-request-scheduling-l3_102"
+      }
+    ]
   },
   {
     "task_id": "workarena.servicenow.high-priority-filter-problems-and-mark-duplicates-large-l3_435",
@@ -7159,7 +7166,14 @@
   },
   {
     "task_id": "workarena.servicenow.dashboard-retrieve-incident-and-mean-create-problem-l3_121",
-    "trajectory_records": []
+    "trajectory_records": [
+      {
+        "agent": "manualactionagent",
+        "model": "manual",
+        "reward": 1,
+        "path": "/local/diwu/longmemeval-v2-data/workarena/successful_rerun_trajectories/l3/2026-02-06_10-57-13_ManualActionAgent_on_workarena.servicenow.dashboard-retrieve-incident-and-mean-create-problem-l3_121"
+      }
+    ]
   },
   {
     "task_id": "workarena.servicenow.dashboard-retrieve-incident-and-median-create-problem-l3_121",
@@ -7310,7 +7324,14 @@
   },
   {
     "task_id": "workarena.servicenow.navigate-and-sort-service-catalog-item-list-l3_87",
-    "trajectory_records": []
+    "trajectory_records": [
+      {
+        "agent": "manualactionagent",
+        "model": "manual",
+        "reward": 1,
+        "path": "/local/diwu/longmemeval-v2-data/workarena/successful_rerun_trajectories/l3/2026-02-06_11-17-46_ManualActionAgent_on_workarena.servicenow.navigate-and-sort-service-catalog-item-list-l3_87"
+      }
+    ]
   },
   {
     "task_id": "workarena.servicenow.off-board-user-l3_87",
