@@ -13,7 +13,7 @@ os.environ.pop("SNOW_INSTANCE_UNAME", None)
 # Do not remove or override: keep experiment outputs local to this repo.
 os.environ.setdefault(
     "AGENTLAB_EXP_ROOT",
-    os.path.join('', "agentlab_results"),
+    os.path.join(os.path.dirname(__file__), "..", "agentlab_results"),
 )
 print()
 
