@@ -6802,7 +6802,14 @@
   },
   {
     "task_id": "workarena.servicenow.filter-requested-items-and-order-development-laptop-p-c-l3_106",
-    "trajectory_records": []
+    "trajectory_records": [
+      {
+        "agent": "manualactionagent",
+        "model": "manual",
+        "reward": 1,
+        "path": "/local/diwu/longmemeval-v2-data/workarena/successful_rerun_trajectories/l3/2026-02-06_01-54-24_ManualActionAgent_on_workarena.servicenow.filter-requested-items-and-order-development-laptop-p-c-l3_106"
+      }
+    ]
   },
   {
     "task_id": "workarena.servicenow.dashboard-retrieve-catalog-and-max-order-standard-laptop-l3_71",
@@ -6926,7 +6933,14 @@
   },
   {
     "task_id": "workarena.servicenow.get-warranty-expiration-date-l3_614",
-    "trajectory_records": []
+    "trajectory_records": [
+      {
+        "agent": "manualactionagent",
+        "model": "manual",
+        "reward": 1,
+        "path": "/local/diwu/longmemeval-v2-data/workarena/successful_rerun_trajectories/l3/2026-02-06_02-09-33_ManualActionAgent_on_workarena.servicenow.get-warranty-expiration-date-l3_614"
+      }
+    ]
   },
   {
     "task_id": "workarena.servicenow.filter-requested-items-and-order-development-laptop-p-c-l3_614",
@@ -7022,7 +7036,20 @@
   },
   {
     "task_id": "workarena.servicenow.filter-single-item-expenses-and-find-total-return-small-l3_121",
-    "trajectory_records": []
+    "trajectory_records": [
+      {
+        "agent": "genericagent",
+        "model": "gpt-5-mini-2025-08-07",
+        "reward": 1,
+        "path": "/local/diwu/longmemeval-v2-data/workarena/successful_rerun_trajectories/l3/2026-02-05_20-59-02_GenericAgent-gpt-5-mini-2025-08-07-re-high_on_workarena.servicenow.filter-single-item-expenses-and-find-total-return-small-l3_121"
+      },
+      {
+        "agent": "manualactionagent",
+        "model": "manual",
+        "reward": 1,
+        "path": "/local/diwu/longmemeval-v2-data/workarena/successful_rerun_trajectories/l3/2026-02-06_00-26-03_ManualActionAgent_on_workarena.servicenow.filter-single-item-expenses-and-find-total-return-small-l3_121"
+      }
+    ]
   },
   {
     "task_id": "workarena.servicenow.filter-random-expenses-and-select-investments-small-l3_121",
@@ -7045,7 +7072,14 @@
   },
   {
     "task_id": "workarena.servicenow.filter-two-items-uniform-expenses-and-select-investments-small-l3_121",
-    "trajectory_records": []
+    "trajectory_records": [
+      {
+        "agent": "manualactionagent",
+        "model": "manual",
+        "reward": 1,
+        "path": "/local/diwu/longmemeval-v2-data/workarena/successful_rerun_trajectories/l3/2026-02-06_00-10-46_ManualActionAgent_on_workarena.servicenow.filter-two-items-uniform-expenses-and-select-investments-small-l3_121"
+      }
+    ]
   },
   {
     "task_id": "workarena.servicenow.filter-single-item-expenses-and-select-investments-medium-l3_121",
@@ -7205,7 +7239,14 @@
   },
   {
     "task_id": "workarena.servicenow.on-board-user-l3_214",
-    "trajectory_records": []
+    "trajectory_records": [
+      {
+        "agent": "manualactionagent",
+        "model": "manual",
+        "reward": 1,
+        "path": "/local/diwu/longmemeval-v2-data/workarena/successful_rerun_trajectories/l3/2026-02-06_01-27-30_ManualActionAgent_on_workarena.servicenow.on-board-user-l3_214"
+      }
+    ]
   },
   {
     "task_id": "workarena.servicenow.navigate-and-create-incident-l3_330",
@@ -7417,7 +7458,14 @@
   },
   {
     "task_id": "workarena.servicenow.infeasible-navigate-and-create-change-request-with-reason-l3_661",
-    "trajectory_records": []
+    "trajectory_records": [
+      {
+        "agent": "manualactionagent",
+        "model": "manual",
+        "reward": 1,
+        "path": "/local/diwu/longmemeval-v2-data/workarena/successful_rerun_trajectories/l3/2026-02-06_01-46-06_ManualActionAgent_on_workarena.servicenow.infeasible-navigate-and-create-change-request-with-reason-l3_661"
+      }
+    ]
   },
   {
     "task_id": "workarena.servicenow.infeasible-navigate-and-create-incident-l3_661",

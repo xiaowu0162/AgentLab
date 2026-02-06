@@ -65,8 +65,14 @@ def parse_agent_model(dir_name: str) -> Tuple[Optional[str], Optional[str]]:
     if "-re-" in segment:
         segment = segment.split("-re-", 1)[0]
 
+    # Support trajectories named like:
+    #   2026-..._ManualActionAgent_on_workarena....
+    # where no explicit model suffix is present in the directory name.
     if "-" not in segment:
-        return None, None
+        agent = segment.strip().lower() if segment else None
+        if not agent:
+            return None, None
+        return agent, "manual"
 
     agent_part, model_part = segment.split("-", 1)
     agent = agent_part.strip().lower() if agent_part else None
