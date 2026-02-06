@@ -83,7 +83,7 @@ def run_command_capture(cmd: List[str], cwd: Optional[Path] = None) -> subproces
 
 def main() -> int:
     script_dir = Path(__file__).resolve().parent
-    default_failed = script_dir / "failed_l2_task_ids.json"
+    default_failed = script_dir / "rerun_task_ids_l3.json"
     default_main = script_dir / "main_workarena_generic_rerun.py"
     default_process = script_dir / "process_rerun_results.py"
     default_update = script_dir / "update_successful_rerun_journal.py"
@@ -93,14 +93,14 @@ def main() -> int:
         default_runs_root = str((script_dir / ".." / "agentlab_results").resolve())
 
     parser = argparse.ArgumentParser(
-        description="Automate WorkArena L2 rerun pipeline."
+        description="Automate WorkArena L3 rerun pipeline."
     )
     parser.add_argument("--failed-json", type=Path, default=default_failed)
-    parser.add_argument("--limit", type=int, default=62)
+    parser.add_argument("--limit", type=int, default=22)
     parser.add_argument(
         "--task-ids-out",
         type=Path,
-        default=script_dir / "rerun_task_ids.json",
+        default=script_dir / "rerun_task_ids_l3.json",
         help="Where to write selected task IDs.",
     )
     parser.add_argument("--main-script", type=Path, default=default_main)
@@ -134,7 +134,7 @@ def main() -> int:
         "--dest-root",
         type=Path,
         default=Path(
-            "/local/diwu/longmemeval-v2-data/workarena/successful_rerun_trajectories/l2"
+            "/local/diwu/longmemeval-v2-data/workarena/successful_rerun_trajectories/l3"
         ),
         help="Destination root for successful rerun copies.",
     )
