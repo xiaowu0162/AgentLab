@@ -7395,7 +7395,14 @@
   },
   {
     "task_id": "workarena.servicenow.navigate-and-sort-incident-list-l3_372",
-    "trajectory_records": []
+    "trajectory_records": [
+      {
+        "agent": "manualactionagent",
+        "model": "manual",
+        "reward": 1,
+        "path": "/local/diwu/longmemeval-v2-data/workarena/successful_rerun_trajectories/l3/2026-02-08_23-19-54_ManualActionAgent_on_workarena.servicenow.navigate-and-sort-incident-list-l3_372"
+      }
+    ]
   },
   {
     "task_id": "workarena.servicenow.off-board-user-l3_372",
@@ -7450,7 +7457,14 @@
   },
   {
     "task_id": "workarena.servicenow.navigate-and-sort-asset-list-l3_871",
-    "trajectory_records": []
+    "trajectory_records": [
+      {
+        "agent": "manualactionagent",
+        "model": "manual",
+        "reward": 1,
+        "path": "/local/diwu/longmemeval-v2-data/workarena/successful_rerun_trajectories/l3/2026-02-08_23-33-45_ManualActionAgent_on_workarena.servicenow.navigate-and-sort-asset-list-l3_871"
+      }
+    ]
   },
   {
     "task_id": "workarena.servicenow.off-board-user-l3_871",
