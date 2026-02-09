@@ -7233,7 +7233,14 @@
   },
   {
     "task_id": "workarena.servicenow.navigate-and-sort-user-list-l3_466",
-    "trajectory_records": []
+    "trajectory_records": [
+      {
+        "agent": "manualactionagent",
+        "model": "manual",
+        "reward": 1,
+        "path": "/local/diwu/longmemeval-v2-data/workarena/successful_rerun_trajectories/l3/2026-02-08_22-40-03_ManualActionAgent_on_workarena.servicenow.navigate-and-sort-user-list-l3_466"
+      }
+    ]
   },
   {
     "task_id": "workarena.servicenow.off-board-user-l3_466",
@@ -7257,7 +7264,14 @@
   },
   {
     "task_id": "workarena.servicenow.navigate-and-sort-service-catalog-item-list-l3_214",
-    "trajectory_records": []
+    "trajectory_records": [
+      {
+        "agent": "manualactionagent",
+        "model": "manual",
+        "reward": 1,
+        "path": "/local/diwu/longmemeval-v2-data/workarena/successful_rerun_trajectories/l3/2026-02-08_22-55-22_ManualActionAgent_on_workarena.servicenow.navigate-and-sort-service-catalog-item-list-l3_214"
+      }
+    ]
   },
   {
     "task_id": "workarena.servicenow.off-board-user-l3_214",
@@ -7288,7 +7302,14 @@
   },
   {
     "task_id": "workarena.servicenow.navigate-and-sort-asset-list-l3_330",
-    "trajectory_records": []
+    "trajectory_records": [
+      {
+        "agent": "manualactionagent",
+        "model": "manual",
+        "reward": 1,
+        "path": "/local/diwu/longmemeval-v2-data/workarena/successful_rerun_trajectories/l3/2026-02-08_23-11-31_ManualActionAgent_on_workarena.servicenow.navigate-and-sort-asset-list-l3_330"
+      }
+    ]
   },
   {
     "task_id": "workarena.servicenow.off-board-user-l3_330",
@@ -7312,7 +7333,14 @@
   },
   {
     "task_id": "workarena.servicenow.navigate-and-sort-user-list-l3_458",
-    "trajectory_records": []
+    "trajectory_records": [
+      {
+        "agent": "manualactionagent",
+        "model": "manual",
+        "reward": 1,
+        "path": "/local/diwu/longmemeval-v2-data/workarena/successful_rerun_trajectories/l3/2026-02-08_22-02-18_ManualActionAgent_on_workarena.servicenow.navigate-and-sort-user-list-l3_458"
+      }
+    ]
   },
   {
     "task_id": "workarena.servicenow.off-board-user-l3_458",
@@ -7391,7 +7419,14 @@
   },
   {
     "task_id": "workarena.servicenow.navigate-and-sort-user-list-l3_99",
-    "trajectory_records": []
+    "trajectory_records": [
+      {
+        "agent": "manualactionagent",
+        "model": "manual",
+        "reward": 1,
+        "path": "/local/diwu/longmemeval-v2-data/workarena/successful_rerun_trajectories/l3/2026-02-08_22-31-18_ManualActionAgent_on_workarena.servicenow.navigate-and-sort-user-list-l3_99"
+      }
+    ]
   },
   {
     "task_id": "workarena.servicenow.off-board-user-l3_99",
