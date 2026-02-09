@@ -23,6 +23,7 @@ JOURNAL_PATH = Path(__file__).resolve().parent / "longmemevalv2_trajectory_colle
 
 _TIMESTAMP_PREFIX_RE = re.compile(r"^\d{4}-\d{2}-\d{2}_\d{2}-\d{2}-\d{2}_")
 _TASK_ID_RE = re.compile(r"on_(workarena\..+)$")
+_MANUAL_AGENT_NAMES = {"manualactionagent", "manual_action_agent", "manual-action-agent"}
 
 
 def find_trajectory_dirs(root: Path) -> List[Path]:
@@ -65,19 +66,21 @@ def parse_agent_model(dir_name: str) -> Tuple[Optional[str], Optional[str]]:
     if "-re-" in segment:
         segment = segment.split("-re-", 1)[0]
 
-    # Support trajectories named like:
-    #   2026-..._ManualActionAgent_on_workarena....
-    # where no explicit model suffix is present in the directory name.
-    if "-" not in segment:
-        agent = segment.strip().lower() if segment else None
-        if not agent:
-            return None, None
+    segment = segment.strip("_- ")
+
+    if "-" in segment:
+        agent_part, model_part = segment.split("-", 1)
+        agent = agent_part.strip().lower() if agent_part else None
+        model = model_part.strip() if model_part else None
+        if agent and model:
+            return agent, model
+
+    # ManualActionAgent reruns do not include a model suffix in folder names.
+    agent = segment.lower() if segment else None
+    if agent in _MANUAL_AGENT_NAMES:
         return agent, "manual"
 
-    agent_part, model_part = segment.split("-", 1)
-    agent = agent_part.strip().lower() if agent_part else None
-    model = model_part.strip() if model_part else None
-    return agent, model
+    return None, None
 
 
 def extract_reward(summary: Dict) -> Optional[int]:

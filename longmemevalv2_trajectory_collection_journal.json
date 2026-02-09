@@ -2445,6 +2445,12 @@
         "model": "gpt-5-mini-2025-08-07",
         "reward": 1,
         "path": "/home/diwu/ralm/LongMemEval-V2-Workspace/enterprise/data/trajectories/20260121_import/2025-10-20_13-53-48_genericagent-gpt-5-mini-2025-08-07-on-workarena-l1/2025-10-20_13-53-50_GenericAgent-gpt-5-mini-2025-08-07_on_workarena.servicenow.all-menu_573"
+      },
+      {
+        "agent": "manualactionagent",
+        "model": "manual",
+        "reward": 1,
+        "path": "/local/diwu/longmemeval-v2-data/workarena/successful_rerun_trajectories/l1/2026-02-08_21-43-43_ManualActionAgent_on_workarena.servicenow.all-menu_573"
       }
     ]
   },
@@ -7085,6 +7091,12 @@
         "model": "manual",
         "reward": 1,
         "path": "/local/diwu/longmemeval-v2-data/workarena/successful_rerun_trajectories/l3/2026-02-06_00-10-46_ManualActionAgent_on_workarena.servicenow.filter-two-items-uniform-expenses-and-select-investments-small-l3_121"
+      },
+      {
+        "agent": "manualactionagent",
+        "model": "manual",
+        "reward": 1,
+        "path": "/local/diwu/longmemeval-v2-data/workarena/successful_rerun_trajectories/l3/2026-02-06_00-18-38_ManualActionAgent_on_workarena.servicenow.filter-two-items-uniform-expenses-and-select-investments-small-l3_121"
       }
     ]
   },
