@@ -6635,7 +6635,14 @@
   },
   {
     "task_id": "workarena.servicenow.high-priority-filter-problems-and-mark-duplicates-large-l3_435",
-    "trajectory_records": []
+    "trajectory_records": [
+      {
+        "agent": "manualactionagent",
+        "model": "manual",
+        "reward": 1,
+        "path": "/local/diwu/longmemeval-v2-data/workarena/successful_rerun_trajectories/l3/2026-02-09_11-25-18_ManualActionAgent_on_workarena.servicenow.high-priority-filter-problems-and-mark-duplicates-large-l3_435"
+      }
+    ]
   },
   {
     "task_id": "workarena.servicenow.high-priority-filter-problems-and-mark-duplicates-small-l3_435",
@@ -6675,7 +6682,14 @@
   },
   {
     "task_id": "workarena.servicenow.workload-balancing-large-l3_435",
-    "trajectory_records": []
+    "trajectory_records": [
+      {
+        "agent": "manualactionagent",
+        "model": "manual",
+        "reward": 1,
+        "path": "/local/diwu/longmemeval-v2-data/workarena/successful_rerun_trajectories/l3/2026-02-09_10-34-58_ManualActionAgent_on_workarena.servicenow.workload-balancing-large-l3_435"
+      }
+    ]
   },
   {
     "task_id": "workarena.servicenow.workload-balancing-small-l3_435",
@@ -6969,7 +6983,14 @@
   },
   {
     "task_id": "workarena.servicenow.amount-based-expense-management-large-l3_121",
-    "trajectory_records": []
+    "trajectory_records": [
+      {
+        "agent": "manualactionagent",
+        "model": "manual",
+        "reward": 1,
+        "path": "/local/diwu/longmemeval-v2-data/workarena/successful_rerun_trajectories/l3/2026-02-09_11-03-05_ManualActionAgent_on_workarena.servicenow.amount-based-expense-management-large-l3_121"
+      }
+    ]
   },
   {
     "task_id": "workarena.servicenow.easy-expense-management-large-l3_121",
