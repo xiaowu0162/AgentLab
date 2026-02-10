@@ -8347,7 +8347,14 @@
   },
   {
     "task_id": "workarena.servicenow.work-assignment-small-l3_102",
-    "trajectory_records": [],
+    "trajectory_records": [
+      {
+        "agent": "manualactionagent",
+        "model": "manual",
+        "reward": 1,
+        "path": "/local/diwu/longmemeval-v2-data/workarena/successful_rerun_trajectories/l3/2026-02-09_23-59-21_ManualActionAgent_on_workarena.servicenow.work-assignment-small-l3_102"
+      }
+    ],
     "task_goal": "Please complete the following task.",
     "task_goal_source_path": "/local/diwu/longmemeval-v2-data/workarena/cheating_agent_trajs/2026-01-28_10-25-03_cheatingagent-on-workarena-l3-agent-curriculum-eval/2026-01-28_10-25-05_CheatingAgent_on_workarena.servicenow.work-assignment-small-l3_102",
     "task_goal_source_kind": "indexed_path"
@@ -8508,7 +8515,14 @@
   },
   {
     "task_id": "workarena.servicenow.priority-assignment-medium-l3_435",
-    "trajectory_records": [],
+    "trajectory_records": [
+      {
+        "agent": "manualactionagent",
+        "model": "manual",
+        "reward": 1,
+        "path": "/local/diwu/longmemeval-v2-data/workarena/successful_rerun_trajectories/l3/2026-02-09_21-35-12_ManualActionAgent_on_workarena.servicenow.priority-assignment-medium-l3_435"
+      }
+    ],
     "task_goal": "Please complete the following task.",
     "task_goal_source_path": "/local/diwu/longmemeval-v2-data/workarena/cheating_agent_trajs/2026-01-28_10-25-03_cheatingagent-on-workarena-l3-agent-curriculum-eval/2026-01-28_10-25-05_CheatingAgent_on_workarena.servicenow.priority-assignment-medium-l3_435",
     "task_goal_source_kind": "indexed_path"
@@ -9423,7 +9437,14 @@
   },
   {
     "task_id": "workarena.servicenow.navigate-and-filter-user-list-l3_466",
-    "trajectory_records": [],
+    "trajectory_records": [
+      {
+        "agent": "manualactionagent",
+        "model": "manual",
+        "reward": 1,
+        "path": "/local/diwu/longmemeval-v2-data/workarena/successful_rerun_trajectories/l3/2026-02-10_00-45-54_ManualActionAgent_on_workarena.servicenow.navigate-and-filter-user-list-l3_466"
+      }
+    ],
     "task_goal": "Please complete the following task.",
     "task_goal_source_path": "/local/diwu/longmemeval-v2-data/workarena/cheating_agent_trajs/2026-01-28_10-25-03_cheatingagent-on-workarena-l3-agent-curriculum-eval/2026-01-28_10-52-24_CheatingAgent_on_workarena.servicenow.navigate-and-filter-user-list-l3_466",
     "task_goal_source_kind": "indexed_path"
@@ -9696,7 +9717,14 @@
   },
   {
     "task_id": "workarena.servicenow.off-board-user-l3_372",
-    "trajectory_records": [],
+    "trajectory_records": [
+      {
+        "agent": "manualactionagent",
+        "model": "manual",
+        "reward": 1,
+        "path": "/local/diwu/longmemeval-v2-data/workarena/successful_rerun_trajectories/l3/2026-02-09_22-05-24_ManualActionAgent_on_workarena.servicenow.off-board-user-l3_372"
+      }
+    ],
     "task_goal": "Please complete the following task.",
     "task_goal_source_path": "/local/diwu/longmemeval-v2-data/workarena/cheating_agent_trajs/2026-01-28_10-25-03_cheatingagent-on-workarena-l3-agent-curriculum-eval/2026-01-28_10-25-06_CheatingAgent_on_workarena.servicenow.off-board-user-l3_372",
     "task_goal_source_kind": "indexed_path"
