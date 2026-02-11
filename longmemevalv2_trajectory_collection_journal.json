@@ -8557,7 +8557,14 @@
   },
   {
     "task_id": "workarena.servicenow.three-changes-fix-basic-varied-risk-change-request-scheduling-l3_435",
-    "trajectory_records": [],
+    "trajectory_records": [
+      {
+        "agent": "manualactionagent",
+        "model": "manual",
+        "reward": 1,
+        "path": "/local/diwu/longmemeval-v2-data/workarena/successful_rerun_trajectories/l3/2026-02-10_11-22-23_ManualActionAgent_on_workarena.servicenow.three-changes-fix-basic-varied-risk-change-request-scheduling-l3_435"
+      }
+    ],
     "task_goal": "Please complete the following task.",
     "task_goal_source_path": "/local/diwu/longmemeval-v2-data/workarena/cheating_agent_trajs/2026-01-28_10-25-03_cheatingagent-on-workarena-l3-agent-curriculum-eval/2026-01-28_10-25-05_CheatingAgent_on_workarena.servicenow.three-changes-fix-basic-varied-risk-change-request-scheduling-l3_435",
     "task_goal_source_kind": "indexed_path"
@@ -9061,7 +9068,14 @@
   },
   {
     "task_id": "workarena.servicenow.basic-expense-management-medium-l3_121",
-    "trajectory_records": [],
+    "trajectory_records": [
+      {
+        "agent": "manualactionagent",
+        "model": "manual",
+        "reward": 1,
+        "path": "/local/diwu/longmemeval-v2-data/workarena/successful_rerun_trajectories/l3/2026-02-11_00-48-37_ManualActionAgent_on_workarena.servicenow.basic-expense-management-medium-l3_121"
+      }
+    ],
     "task_goal": "Please complete the following task.",
     "task_goal_source_path": "/local/diwu/longmemeval-v2-data/workarena/cheating_agent_trajs/2026-01-28_10-25-03_cheatingagent-on-workarena-l3-agent-curriculum-eval/2026-01-28_10-25-06_CheatingAgent_on_workarena.servicenow.basic-expense-management-medium-l3_121",
     "task_goal_source_kind": "indexed_path"
