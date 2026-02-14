@@ -96,7 +96,7 @@ def main() -> int:
         description="Automate WorkArena L3 rerun pipeline."
     )
     parser.add_argument("--failed-json", type=Path, default=default_failed)
-    parser.add_argument("--limit", type=int, default=22)
+    parser.add_argument("--limit", type=int, default=40)
     parser.add_argument(
         "--task-ids-out",
         type=Path,
@@ -123,6 +123,15 @@ def main() -> int:
         type=int,
         default=60 * 60,
         help="Per-task wall-clock timeout in seconds (0 or negative to disable).",
+    )
+    parser.add_argument(
+        "--model-name",
+        type=str,
+        default=None,
+        help=(
+            "Optional model key to forward to main_workarena_generic_rerun.py "
+            "(e.g. openai/gpt-5.2)."
+        ),
     )
     parser.add_argument(
         "--runs-root",
@@ -174,7 +183,8 @@ def main() -> int:
             str(args.task_ids_out),
             "--task-timeout-seconds",
             str(args.task_timeout_seconds),
-        ],
+        ]
+        + (["--model-name", args.model_name] if args.model_name else []),
         cwd=script_dir,
     )
 

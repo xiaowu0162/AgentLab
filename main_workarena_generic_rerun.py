@@ -27,8 +27,13 @@ from agentlab.llm.llm_configs import CHAT_MODEL_ARGS_DICT, GPT5_REASONING_EFFORT
 TASK_IDS = []
 
 # Choose the model to rerun with (must exist in CHAT_MODEL_ARGS_DICT).
-MODEL_NAME = "openai/gpt-5-mini-2025-08-07"
+MODEL_NAME = "openai/gpt-5.2"
 REASONING_EFFORT_OVERRIDE = "high"  # highest supported for GPT-5 mini
+MODEL_NAME_ALIASES = {
+    "openai/gpt-5-2": "openai/gpt-5.2",
+    "gpt-5-2": "openai/gpt-5.2",
+    "gpt-5.2": "openai/gpt-5.2",
+}
 
 # Number of parallel jobs
 n_jobs = 4
@@ -70,11 +75,26 @@ if __name__ == "__main__":
         default=TASK_TIMEOUT_SECONDS,
         help="Per-task wall-clock timeout in seconds (0 or negative to disable).",
     )
+    parser.add_argument(
+        "--model-name",
+        default=os.environ.get("WORKARENA_MODEL_NAME", MODEL_NAME),
+        help=(
+            "Model key from CHAT_MODEL_ARGS_DICT. "
+            "Examples: openai/gpt-5-mini-2025-08-07, openai/gpt-5.2."
+        ),
+    )
+    parser.add_argument(
+        "--reasoning-effort",
+        default=REASONING_EFFORT_OVERRIDE,
+        choices=("low", "medium", "high"),
+        help="Reasoning effort for GPT-5 family models.",
+    )
     args, _ = parser.parse_known_args()
 
     if args.task_ids_json and args.task_ids:
         raise SystemExit("Use only one of --task-ids-json or --task-ids.")
 
+    task_ids = list(TASK_IDS)
     if args.task_ids_json:
         with open(args.task_ids_json, "r", encoding="utf-8") as f:
             task_ids = json.load(f)
@@ -105,18 +125,22 @@ if __name__ == "__main__":
             if any(r["reward"] == 1 for r in records):
                 successful_task_ids.add(task_id)
 
-    if MODEL_NAME not in CHAT_MODEL_ARGS_DICT:
+    model_name = MODEL_NAME_ALIASES.get(args.model_name, args.model_name)
+    if model_name != args.model_name:
+        print(f"Normalized model alias {args.model_name!r} -> {model_name!r}")
+
+    if model_name not in CHAT_MODEL_ARGS_DICT:
         raise ValueError(
-            f"MODEL_NAME={MODEL_NAME!r} not found in CHAT_MODEL_ARGS_DICT. "
+            f"MODEL_NAME={model_name!r} not found in CHAT_MODEL_ARGS_DICT. "
             "Update MODEL_NAME to a supported key."
         )
 
     generic_agent = deepcopy(AGENT_GPT5_MINI)
-    generic_agent.chat_model_args = CHAT_MODEL_ARGS_DICT[MODEL_NAME]
-    if MODEL_NAME in GPT5_REASONING_EFFORT_BY_MODEL:
-        reasoning_effort = REASONING_EFFORT_OVERRIDE or GPT5_REASONING_EFFORT_BY_MODEL[MODEL_NAME]
+    generic_agent.chat_model_args = CHAT_MODEL_ARGS_DICT[model_name]
+    if model_name in GPT5_REASONING_EFFORT_BY_MODEL:
+        reasoning_effort = args.reasoning_effort or GPT5_REASONING_EFFORT_BY_MODEL[model_name]
         generic_agent.chat_model_args.reasoning_effort = reasoning_effort
-        print(f"Using reasoning_effort={reasoning_effort} for {MODEL_NAME}")
+        print(f"Using reasoning_effort={reasoning_effort} for {model_name}")
     generic_agent.agent_name = f"GenericAgent-{generic_agent.chat_model_args.model_name}".replace(
         "/", "_"
     )
@@ -149,7 +173,7 @@ if __name__ == "__main__":
     study = make_study(
         benchmark=benchmark,
         agent_args=[generic_agent],
-        comment=f"generic rerun ({MODEL_NAME})",
+        comment=f"generic rerun ({model_name})",
     )
     if args.task_timeout_seconds and args.task_timeout_seconds > 0:
         for exp_args in study.exp_args_list:

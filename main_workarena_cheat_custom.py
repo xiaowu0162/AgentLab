@@ -39,7 +39,7 @@ from agentlab.experiments.study import make_study
 n_jobs = 80
 parallel_backend = "ray"
 avg_step_timeout = 1200  # seconds per step used for Ray cancel timeout
-max_steps = 50  # override WorkArena default episode length (was 15 in your env)
+max_steps = 100  # override WorkArena default episode length (was 15 in your env)
 
 # Increase WorkArena Playwright default timeout (ms)
 CHEATING_CUSTOM_AGENT.snow_browser_timeout_ms = 120_000
