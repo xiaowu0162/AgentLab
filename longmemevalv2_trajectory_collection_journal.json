@@ -8249,7 +8249,14 @@
   },
   {
     "task_id": "workarena.servicenow.basic-filter-problems-and-mark-duplicates-medium-l3_102",
-    "trajectory_records": [],
+    "trajectory_records": [
+      {
+        "agent": "genericagent",
+        "model": "gpt-5.2",
+        "reward": 1,
+        "path": "/local/diwu/longmemeval-v2-data/workarena/successful_rerun_trajectories/l3/2026-02-14_12-41-37_GenericAgent-gpt-5.2-re-high_on_workarena.servicenow.basic-filter-problems-and-mark-duplicates-medium-l3_102"
+      }
+    ],
     "task_goal": "Please complete the following task.",
     "task_goal_source_path": "/local/diwu/longmemeval-v2-data/workarena/cheating_agent_trajs/2026-01-28_10-25-03_cheatingagent-on-workarena-l3-agent-curriculum-eval/2026-01-28_10-25-05_CheatingAgent_on_workarena.servicenow.basic-filter-problems-and-mark-duplicates-medium-l3_102",
     "task_goal_source_kind": "indexed_path"
@@ -8298,7 +8305,14 @@
   },
   {
     "task_id": "workarena.servicenow.priority-filter-problems-and-mark-duplicates-small-l3_102",
-    "trajectory_records": [],
+    "trajectory_records": [
+      {
+        "agent": "genericagent",
+        "model": "gpt-5.2",
+        "reward": 1,
+        "path": "/local/diwu/longmemeval-v2-data/workarena/successful_rerun_trajectories/l3/2026-02-14_12-41-37_GenericAgent-gpt-5.2-re-high_on_workarena.servicenow.priority-filter-problems-and-mark-duplicates-small-l3_102"
+      }
+    ],
     "task_goal": "Please complete the following task.",
     "task_goal_source_path": "/local/diwu/longmemeval-v2-data/workarena/cheating_agent_trajs/2026-01-28_10-25-03_cheatingagent-on-workarena-l3-agent-curriculum-eval/2026-01-28_10-25-05_CheatingAgent_on_workarena.servicenow.priority-filter-problems-and-mark-duplicates-small-l3_102",
     "task_goal_source_kind": "indexed_path"
@@ -8459,7 +8473,14 @@
   },
   {
     "task_id": "workarena.servicenow.high-priority-filter-problems-and-mark-duplicates-medium-l3_435",
-    "trajectory_records": [],
+    "trajectory_records": [
+      {
+        "agent": "genericagent",
+        "model": "gpt-5.2",
+        "reward": 1,
+        "path": "/local/diwu/longmemeval-v2-data/workarena/successful_rerun_trajectories/l3/2026-02-14_12-41-37_GenericAgent-gpt-5.2-re-high_on_workarena.servicenow.high-priority-filter-problems-and-mark-duplicates-medium-l3_435"
+      }
+    ],
     "task_goal": "Please complete the following task.",
     "task_goal_source_path": "/local/diwu/longmemeval-v2-data/workarena/cheating_agent_trajs/2026-01-28_10-25-03_cheatingagent-on-workarena-l3-agent-curriculum-eval/2026-01-28_10-25-05_CheatingAgent_on_workarena.servicenow.high-priority-filter-problems-and-mark-duplicates-medium-l3_435",
     "task_goal_source_kind": "indexed_path"
@@ -8760,7 +8781,14 @@
   },
   {
     "task_id": "workarena.servicenow.dashboard-retrieve-incident-and-max-request-apple-watch-l3_106",
-    "trajectory_records": [],
+    "trajectory_records": [
+      {
+        "agent": "genericagent",
+        "model": "gpt-5.2",
+        "reward": 1,
+        "path": "/local/diwu/longmemeval-v2-data/workarena/successful_rerun_trajectories/l3/2026-02-14_12-41-37_GenericAgent-gpt-5.2-re-high_on_workarena.servicenow.dashboard-retrieve-incident-and-max-request-apple-watch-l3_106"
+      }
+    ],
     "task_goal": "Please complete the following task.",
     "task_goal_source_path": "/local/diwu/longmemeval-v2-data/workarena/cheating_agent_trajs/2026-01-28_10-25-03_cheatingagent-on-workarena-l3-agent-curriculum-eval/2026-01-28_10-52-24_CheatingAgent_on_workarena.servicenow.dashboard-retrieve-incident-and-max-request-apple-watch-l3_106",
     "task_goal_source_kind": "indexed_path"
@@ -9075,7 +9103,14 @@
   },
   {
     "task_id": "workarena.servicenow.easy-expense-management-small-l3_121",
-    "trajectory_records": [],
+    "trajectory_records": [
+      {
+        "agent": "genericagent",
+        "model": "gpt-5.2",
+        "reward": 1,
+        "path": "/local/diwu/longmemeval-v2-data/workarena/successful_rerun_trajectories/l3/2026-02-14_12-41-37_GenericAgent-gpt-5.2-re-high_on_workarena.servicenow.easy-expense-management-small-l3_121"
+      }
+    ],
     "task_goal": "Please complete the following task.",
     "task_goal_source_path": "/local/diwu/longmemeval-v2-data/workarena/cheating_agent_trajs/2026-01-28_10-25-03_cheatingagent-on-workarena-l3-agent-curriculum-eval/2026-01-28_10-25-06_CheatingAgent_on_workarena.servicenow.easy-expense-management-small-l3_121",
     "task_goal_source_kind": "indexed_path"
@@ -9152,14 +9187,28 @@
   },
   {
     "task_id": "workarena.servicenow.filter-single-item-expenses-find-total-return-and-select-investments-medium-l3_121",
-    "trajectory_records": [],
+    "trajectory_records": [
+      {
+        "agent": "genericagent",
+        "model": "gpt-5.2",
+        "reward": 1,
+        "path": "/local/diwu/longmemeval-v2-data/workarena/successful_rerun_trajectories/l3/2026-02-14_12-41-37_GenericAgent-gpt-5.2-re-high_on_workarena.servicenow.filter-single-item-expenses-find-total-return-and-select-investments-medium-l3_121"
+      }
+    ],
     "task_goal": "Please complete the following task.",
     "task_goal_source_path": "/local/diwu/longmemeval-v2-data/workarena/cheating_agent_trajs/2026-01-28_10-25-03_cheatingagent-on-workarena-l3-agent-curriculum-eval/2026-01-28_10-52-24_CheatingAgent_on_workarena.servicenow.filter-single-item-expenses-find-total-return-and-select-investments-medium-l3_121",
     "task_goal_source_kind": "indexed_path"
   },
   {
     "task_id": "workarena.servicenow.filter-single-item-uniform-expenses-and-delete-wrong-investments-small-l3_121",
-    "trajectory_records": [],
+    "trajectory_records": [
+      {
+        "agent": "genericagent",
+        "model": "gpt-5.2",
+        "reward": 1,
+        "path": "/local/diwu/longmemeval-v2-data/workarena/successful_rerun_trajectories/l3/2026-02-14_12-41-37_GenericAgent-gpt-5.2-re-high_on_workarena.servicenow.filter-single-item-uniform-expenses-and-delete-wrong-investments-small-l3_121"
+      }
+    ],
     "task_goal": "Please complete the following task.",
     "task_goal_source_path": "/local/diwu/longmemeval-v2-data/workarena/cheating_agent_trajs/2026-01-28_10-25-03_cheatingagent-on-workarena-l3-agent-curriculum-eval/2026-01-28_10-25-06_CheatingAgent_on_workarena.servicenow.filter-single-item-uniform-expenses-and-delete-wrong-investments-small-l3_121",
     "task_goal_source_kind": "indexed_path"
@@ -9297,14 +9346,28 @@
   },
   {
     "task_id": "workarena.servicenow.filter-random-expenses-and-delete-wrong-investments-medium-l3_121",
-    "trajectory_records": [],
+    "trajectory_records": [
+      {
+        "agent": "genericagent",
+        "model": "gpt-5.2",
+        "reward": 1,
+        "path": "/local/diwu/longmemeval-v2-data/workarena/successful_rerun_trajectories/l3/2026-02-14_12-41-37_GenericAgent-gpt-5.2-re-high_on_workarena.servicenow.filter-random-expenses-and-delete-wrong-investments-medium-l3_121"
+      }
+    ],
     "task_goal": "Please complete the following task.",
     "task_goal_source_path": "/local/diwu/longmemeval-v2-data/workarena/cheating_agent_trajs/2026-01-28_10-25-03_cheatingagent-on-workarena-l3-agent-curriculum-eval/2026-01-28_10-25-06_CheatingAgent_on_workarena.servicenow.filter-random-expenses-and-delete-wrong-investments-medium-l3_121",
     "task_goal_source_kind": "indexed_path"
   },
   {
     "task_id": "workarena.servicenow.filter-random-expenses-and-find-total-return-large-l3_121",
-    "trajectory_records": [],
+    "trajectory_records": [
+      {
+        "agent": "genericagent",
+        "model": "gpt-5.2",
+        "reward": 1,
+        "path": "/local/diwu/longmemeval-v2-data/workarena/successful_rerun_trajectories/l3/2026-02-14_12-41-37_GenericAgent-gpt-5.2-re-high_on_workarena.servicenow.filter-random-expenses-and-find-total-return-large-l3_121"
+      }
+    ],
     "task_goal": "Please complete the following task.",
     "task_goal_source_path": "/local/diwu/longmemeval-v2-data/workarena/cheating_agent_trajs/2026-01-28_10-25-03_cheatingagent-on-workarena-l3-agent-curriculum-eval/2026-01-28_10-52-24_CheatingAgent_on_workarena.servicenow.filter-random-expenses-and-find-total-return-large-l3_121",
     "task_goal_source_kind": "indexed_path"
@@ -9360,7 +9423,14 @@
   },
   {
     "task_id": "workarena.servicenow.filter-single-item-expenses-and-delete-wrong-investments-medium-l3_121",
-    "trajectory_records": [],
+    "trajectory_records": [
+      {
+        "agent": "genericagent",
+        "model": "gpt-5.2",
+        "reward": 1,
+        "path": "/local/diwu/longmemeval-v2-data/workarena/successful_rerun_trajectories/l3/2026-02-14_12-41-37_GenericAgent-gpt-5.2-re-high_on_workarena.servicenow.filter-single-item-expenses-and-delete-wrong-investments-medium-l3_121"
+      }
+    ],
     "task_goal": "Please complete the following task.",
     "task_goal_source_path": "/local/diwu/longmemeval-v2-data/workarena/cheating_agent_trajs/2026-01-28_10-25-03_cheatingagent-on-workarena-l3-agent-curriculum-eval/2026-01-28_10-25-06_CheatingAgent_on_workarena.servicenow.filter-single-item-expenses-and-delete-wrong-investments-medium-l3_121",
     "task_goal_source_kind": "indexed_path"
