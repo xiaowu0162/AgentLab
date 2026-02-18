@@ -8333,7 +8333,14 @@
   },
   {
     "task_id": "workarena.servicenow.workload-balancing-small-l3_102",
-    "trajectory_records": [],
+    "trajectory_records": [
+      {
+        "agent": "genericagent",
+        "model": "gpt-5.2",
+        "reward": 1,
+        "path": "/local/diwu/longmemeval-v2-data/workarena/successful_rerun_trajectories/l3/2026-02-17_16-46-44_GenericAgent-gpt-5.2-re-high_on_workarena.servicenow.workload-balancing-small-l3_102"
+      }
+    ],
     "task_goal": "Please complete the following task.",
     "task_goal_source_path": "/local/diwu/longmemeval-v2-data/workarena/cheating_agent_trajs/2026-01-28_10-25-03_cheatingagent-on-workarena-l3-agent-curriculum-eval/2026-01-28_10-25-05_CheatingAgent_on_workarena.servicenow.workload-balancing-small-l3_102",
     "task_goal_source_kind": "indexed_path"
@@ -8368,7 +8375,14 @@
   },
   {
     "task_id": "workarena.servicenow.priority-assignment-medium-l3_102",
-    "trajectory_records": [],
+    "trajectory_records": [
+      {
+        "agent": "genericagent",
+        "model": "gpt-5.2",
+        "reward": 1,
+        "path": "/local/diwu/longmemeval-v2-data/workarena/successful_rerun_trajectories/l3/2026-02-17_16-46-44_GenericAgent-gpt-5.2-re-high_on_workarena.servicenow.priority-assignment-medium-l3_102"
+      }
+    ],
     "task_goal": "Please complete the following task.",
     "task_goal_source_path": "/local/diwu/longmemeval-v2-data/workarena/cheating_agent_trajs/2026-01-28_10-25-03_cheatingagent-on-workarena-l3-agent-curriculum-eval/2026-01-28_10-25-05_CheatingAgent_on_workarena.servicenow.priority-assignment-medium-l3_102",
     "task_goal_source_kind": "indexed_path"
@@ -8550,7 +8564,14 @@
   },
   {
     "task_id": "workarena.servicenow.workload-balancing-small-l3_435",
-    "trajectory_records": [],
+    "trajectory_records": [
+      {
+        "agent": "genericagent",
+        "model": "gpt-5.2",
+        "reward": 1,
+        "path": "/local/diwu/longmemeval-v2-data/workarena/successful_rerun_trajectories/l3/2026-02-17_16-46-44_GenericAgent-gpt-5.2-re-high_on_workarena.servicenow.workload-balancing-small-l3_435"
+      }
+    ],
     "task_goal": "Please complete the following task.",
     "task_goal_source_path": "/local/diwu/longmemeval-v2-data/workarena/cheating_agent_trajs/2026-01-28_10-25-03_cheatingagent-on-workarena-l3-agent-curriculum-eval/2026-01-28_10-25-05_CheatingAgent_on_workarena.servicenow.workload-balancing-small-l3_435",
     "task_goal_source_kind": "indexed_path"
@@ -8634,7 +8655,14 @@
   },
   {
     "task_id": "workarena.servicenow.three-changes-fix-wide-priority-uniform-risk-change-request-scheduling-l3_435",
-    "trajectory_records": [],
+    "trajectory_records": [
+      {
+        "agent": "genericagent",
+        "model": "gpt-5.2",
+        "reward": 1,
+        "path": "/local/diwu/longmemeval-v2-data/workarena/successful_rerun_trajectories/l3/2026-02-17_16-46-44_GenericAgent-gpt-5.2-re-high_on_workarena.servicenow.three-changes-fix-wide-priority-uniform-risk-change-request-scheduling-l3_435"
+      }
+    ],
     "task_goal": "Please complete the following task.",
     "task_goal_source_path": "/local/diwu/longmemeval-v2-data/workarena/cheating_agent_trajs/2026-01-28_10-25-03_cheatingagent-on-workarena-l3-agent-curriculum-eval/2026-01-28_10-25-05_CheatingAgent_on_workarena.servicenow.three-changes-fix-wide-priority-uniform-risk-change-request-scheduling-l3_435",
     "task_goal_source_kind": "indexed_path"
@@ -8872,7 +8900,14 @@
   },
   {
     "task_id": "workarena.servicenow.get-warranty-expiration-date-l3_71",
-    "trajectory_records": [],
+    "trajectory_records": [
+      {
+        "agent": "genericagent",
+        "model": "gpt-5.2",
+        "reward": 1,
+        "path": "/local/diwu/longmemeval-v2-data/workarena/successful_rerun_trajectories/l3/2026-02-17_16-46-44_GenericAgent-gpt-5.2-re-high_on_workarena.servicenow.get-warranty-expiration-date-l3_71"
+      }
+    ],
     "task_goal": "Please complete the following task.",
     "task_goal_source_path": "/local/diwu/longmemeval-v2-data/workarena/cheating_agent_trajs/2026-01-28_10-25-03_cheatingagent-on-workarena-l3-agent-curriculum-eval/2026-01-28_10-25-06_CheatingAgent_on_workarena.servicenow.get-warranty-expiration-date-l3_71",
     "task_goal_source_kind": "indexed_path"
@@ -9026,7 +9061,14 @@
   },
   {
     "task_id": "workarena.servicenow.dashboard-retrieve-incident-and-min-filter-hardware-list-l3_614",
-    "trajectory_records": [],
+    "trajectory_records": [
+      {
+        "agent": "genericagent",
+        "model": "gpt-5.2",
+        "reward": 1,
+        "path": "/local/diwu/longmemeval-v2-data/workarena/successful_rerun_trajectories/l3/2026-02-17_16-46-44_GenericAgent-gpt-5.2-re-high_on_workarena.servicenow.dashboard-retrieve-incident-and-min-filter-hardware-list-l3_614"
+      }
+    ],
     "task_goal": "Please complete the following task.",
     "task_goal_source_path": "/local/diwu/longmemeval-v2-data/workarena/cheating_agent_trajs/2026-01-28_10-25-03_cheatingagent-on-workarena-l3-agent-curriculum-eval/2026-01-28_10-25-06_CheatingAgent_on_workarena.servicenow.dashboard-retrieve-incident-and-min-filter-hardware-list-l3_614",
     "task_goal_source_kind": "indexed_path"
@@ -9388,7 +9430,14 @@
   },
   {
     "task_id": "workarena.servicenow.filter-single-item-uniform-expenses-and-select-investments-medium-l3_121",
-    "trajectory_records": [],
+    "trajectory_records": [
+      {
+        "agent": "genericagent",
+        "model": "gpt-5.2",
+        "reward": 1,
+        "path": "/local/diwu/longmemeval-v2-data/workarena/successful_rerun_trajectories/l3/2026-02-17_16-46-44_GenericAgent-gpt-5.2-re-high_on_workarena.servicenow.filter-single-item-uniform-expenses-and-select-investments-medium-l3_121"
+      }
+    ],
     "task_goal": "Please complete the following task.",
     "task_goal_source_path": "/local/diwu/longmemeval-v2-data/workarena/cheating_agent_trajs/2026-01-28_10-25-03_cheatingagent-on-workarena-l3-agent-curriculum-eval/2026-01-28_10-25-06_CheatingAgent_on_workarena.servicenow.filter-single-item-uniform-expenses-and-select-investments-medium-l3_121",
     "task_goal_source_kind": "indexed_path"
