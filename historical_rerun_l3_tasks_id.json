@@ -184,5 +184,7 @@
     "workarena.servicenow.navigate-and-filter-change-request-list-l3_458",
     "workarena.servicenow.filter-single-item-expenses-and-find-total-return-large-l3_121",
     "workarena.servicenow.dashboard-retrieve-incident-and-max-filter-incident-list-l3_71",
-    "workarena.servicenow.dashboard-retrieve-catalog-and-max-order-developer-laptop-l3_700"
+    "workarena.servicenow.dashboard-retrieve-catalog-and-max-order-developer-laptop-l3_700",
+    "workarena.servicenow.dashboard-retrieve-incident-and-min-filter-asset-list-l3_860",
+    "workarena.servicenow.dashboard-retrieve-incident-and-min-create-incident-l3_700"
 ]
