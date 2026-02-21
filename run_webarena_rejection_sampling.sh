@@ -2,19 +2,31 @@
 set -euo pipefail
 
 # Usage:
-#   ./run_webarena_generic_subset_eval.sh <host> [extra args for python script]
+#   ./run_webarena_rejection_sampling.sh <host> [extra args for python script]
 #
 # Example:
-#   ./run_webarena_generic_subset_eval.sh 10.0.0.12 --task-id-range 1-100 --limit 40 --dry-run
+#   ./run_webarena_rejection_sampling.sh 10.0.0.12 --dry-run
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PYTHON_BIN="${PYTHON_BIN:-python}"
 
-HOST="${1:-${WA_HOST:-}}"
-if [[ -z "${HOST}" ]]; then
-  echo "Missing host."
-  echo "Usage: $0 <host> [extra args for python script]"
-  echo "Or set WA_HOST and run without the first positional argument."
+# HOST="${1:-${WA_HOST:-}}"
+HOST=localhost
+#if [[ -z "${HOST}" ]]; then
+#  echo "Missing host."
+#  echo "Usage: $0 <host> [extra args for python script]"
+#  echo "Or set WA_HOST and run without the first positional argument."
+#  exit 1
+#fi
+
+#if [[ $# -gt 0 ]]; then
+#  shift
+#fi
+
+# TASK_IDS_JSON="${WEBARENA_TASK_IDS_JSON:-${SCRIPT_DIR}/../../web/agentlab_results/20260221_webarena_rejection_sampling.json}"
+TASK_IDS_JSON=$1
+if [[ ! -f "${TASK_IDS_JSON}" ]]; then
+  echo "Task ID JSON not found: ${TASK_IDS_JSON}"
   exit 1
 fi
 
@@ -35,7 +47,6 @@ GITLAB_PORT="${GITLAB_PORT:-9001}"
 WIKIPEDIA_PORT="${WIKIPEDIA_PORT:-9081}"
 MAP_PORT="${MAP_PORT:-9443}"
 HOMEPAGE_PORT="${HOMEPAGE_PORT:-9090}"
-RESET_PORT="${RESET_PORT:-9565}"
 
 # WebArena environment URLs
 export WA_SHOPPING="http://${HOST}:${SHOPPING_PORT}"
@@ -45,8 +56,6 @@ export WA_GITLAB="http://${HOST}:${GITLAB_PORT}/explore"
 export WA_WIKIPEDIA="http://${HOST}:${WIKIPEDIA_PORT}/wikipedia_en_all_maxi_2022-05/A/User:The_other_Kiwix_guy/Landing"
 export WA_MAP="http://${HOST}:${MAP_PORT}"
 export WA_HOMEPAGE="http://${HOST}:${HOMEPAGE_PORT}"
-# Disable WebArena full-reset endpoint for eval runs unless you re-export it manually.
-# unset WA_FULL_RESET
 
 # Runner defaults (override via env if desired)
 export WEBARENA_BENCHMARK="${WEBARENA_BENCHMARK:-webarena}"
@@ -57,23 +66,18 @@ export WEBARENA_MAX_STEPS="${WEBARENA_MAX_STEPS:-50}"
 export WEBARENA_TASK_TIMEOUT_SECONDS="${WEBARENA_TASK_TIMEOUT_SECONDS:-3000}"
 export WEBARENA_PARALLEL_BACKEND="${WEBARENA_PARALLEL_BACKEND:-ray}"
 export WEBARENA_HEADLESS="${WEBARENA_HEADLESS:-true}"
-# export WEBARENA_TASK_ID_RANGE="1-200"  # inclusive
-export WEBARENA_TASK_ID_RANGE="201-900"  # inclusive
 
-# Optional metadata-based subset selector. Example:
-# export WEBARENA_START_URL_FILTERS='["__GITLAB__", "__SHOP__"]'
-export WEBARENA_START_URL_FILTERS='["__REDDIT__", "__SHOPPING_ADMIN__"]'
 EXTRA_ARGS=("$@")
-HAS_START_URL_FILTER_FLAG=0
+HAS_TASK_IDS_JSON_FLAG=0
 for arg in "${EXTRA_ARGS[@]}"; do
-  if [[ "${arg}" == "--start-url-filters" || "${arg}" == --start-url-filters=* ]]; then
-    HAS_START_URL_FILTER_FLAG=1
+  if [[ "${arg}" == "--task-ids-json" || "${arg}" == --task-ids-json=* ]]; then
+    HAS_TASK_IDS_JSON_FLAG=1
     break
   fi
 done
 
-if [[ -n "${WEBARENA_START_URL_FILTERS:-}" && "${HAS_START_URL_FILTER_FLAG}" -eq 0 ]]; then
-  EXTRA_ARGS+=(--start-url-filters "${WEBARENA_START_URL_FILTERS}")
+if [[ "${HAS_TASK_IDS_JSON_FLAG}" -eq 0 ]]; then
+  EXTRA_ARGS+=(--task-ids-json "${TASK_IDS_JSON}")
 fi
 
 cd "${SCRIPT_DIR}"
