@@ -10024,7 +10024,14 @@
   },
   {
     "task_id": "workarena.servicenow.navigate-and-create-user-l3_372",
-    "trajectory_records": [],
+    "trajectory_records": [
+      {
+        "agent": "manualactionagent",
+        "model": "manual",
+        "reward": 1,
+        "path": "/local/diwu/longmemeval-v2-data/workarena/successful_rerun_trajectories/l3/2026-02-25_21-57-13_ManualActionAgent_on_workarena.servicenow.navigate-and-create-user-l3_372"
+      }
+    ],
     "task_goal": "Please complete the following task.",
     "task_goal_source_path": "/local/diwu/longmemeval-v2-data/workarena/cheating_agent_trajs/2026-01-28_10-25-03_cheatingagent-on-workarena-l3-agent-curriculum-eval/2026-01-28_10-25-06_CheatingAgent_on_workarena.servicenow.navigate-and-create-user-l3_372",
     "task_goal_source_kind": "indexed_path"
