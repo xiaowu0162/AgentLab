@@ -80,7 +80,10 @@ def install_webarena_html_evaluator_patch() -> bool:
             if target_url.startswith("func"):
                 func = target_url.split("func:")[1]
                 func = func.replace("__last_url__", page.url)
-                target_url = eval(func)
+                # Evaluate helper-backed target URL functions in the original
+                # WebArena evaluator module namespace so imported helpers like
+                # reddit_get_post_url remain available.
+                target_url = eval(func, eval_mod.__dict__, {"page": page})
 
             locator: str = target["locator"]
 
@@ -119,7 +122,9 @@ def install_webarena_html_evaluator_patch() -> bool:
             elif locator.startswith("func:"):
                 func = locator.split("func:")[1]
                 func = func.replace("__page__", "page")
-                selected_element = eval(func)
+                # Keep locator helper resolution consistent with the original
+                # evaluator module while still binding the current page.
+                selected_element = eval(func, eval_mod.__dict__, {"page": page})
             else:
                 raise ValueError(f"Unknown locator: {locator}")
 
