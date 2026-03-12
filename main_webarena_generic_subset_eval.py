@@ -30,6 +30,7 @@ import bgym
 from agentlab.agents.generic_agent.agent_configs import AGENT_GPT5_MINI
 from agentlab.experiments.loop import log_reasoning_effort_reminder
 from agentlab.experiments.study import make_study
+from agentlab.experiments.webarena_eval_patch import install_webarena_html_evaluator_patch
 from agentlab.llm.llm_configs import CHAT_MODEL_ARGS_DICT
 
 DEFAULT_BENCHMARK = "webarena"
@@ -435,6 +436,8 @@ def main() -> None:
         )
 
     benchmark = bgym.DEFAULT_BENCHMARKS[args.benchmark]()
+    if install_webarena_html_evaluator_patch():
+        print("Installed AgentLab WebArena HTML evaluator patch.")
     env_args_list = list(benchmark.env_args_list)
     metadata_by_task_id = _load_webarena_metadata_by_task_id(args.metadata_json_path)
     print(f"Loaded benchmark {benchmark.name!r} with {len(env_args_list)} tasks")

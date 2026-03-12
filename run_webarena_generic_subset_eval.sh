@@ -60,6 +60,8 @@ export WEBARENA_HEADLESS="${WEBARENA_HEADLESS:-true}"
 # Postmill mutations often persist slightly after the visible click state changes.
 # Use a longer settle before validation for reddit tasks to reduce false negatives.
 export WEBARENA_REDDIT_PRE_OBSERVATION_DELAY="${WEBARENA_REDDIT_PRE_OBSERVATION_DELAY:-4.0}"
+export WEBARENA_EVAL_PAGE_DELAY="${WEBARENA_EVAL_PAGE_DELAY:-3.0}"
+export WEBARENA_REDDIT_EVAL_PAGE_DELAY="${WEBARENA_REDDIT_EVAL_PAGE_DELAY:-6.0}"
 # export WEBARENA_TASK_ID_RANGE="1-200"  # inclusive
 export WEBARENA_TASK_ID_RANGE="201-900"  # inclusive
 
