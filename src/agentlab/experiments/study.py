@@ -749,7 +749,14 @@ def _convert_env_args(env_args_list) -> list[EnvArgs]:
             new_list.append(ea)
         # old → convert
         elif isinstance(ea, BGymEnvArgs):
-            new_list.append(EnvArgs(**asdict(ea)))
+            converted_kwargs = asdict(ea)
+            # BrowserGym's legacy EnvArgs does not declare newer AgentLab-only
+            # fields like pre_observation_delay, but callers may still attach them
+            # before Study() converts benchmark.env_args_list.
+            for extra_field in ("pre_observation_delay",):
+                if hasattr(ea, extra_field):
+                    converted_kwargs[extra_field] = getattr(ea, extra_field)
+            new_list.append(EnvArgs(**converted_kwargs))
         else:
             raise TypeError(f"Unexpected type: {type(ea)}")
     return new_list
