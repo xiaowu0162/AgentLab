@@ -966,6 +966,9 @@ def _get_env_name(task_name: str):
     elif task_name.startswith("workarena"):
         import browsergym.workarena
     elif task_name.startswith("webarena"):
+        from agentlab.experiments.webarena_eval_patch import install_webarena_html_evaluator_patch
+
+        install_webarena_html_evaluator_patch()
         import browsergym.webarena
         import browsergym.webarenalite
 
