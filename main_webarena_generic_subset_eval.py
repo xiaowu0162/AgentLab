@@ -41,6 +41,12 @@ DEFAULT_MAX_STEPS = 30
 DEFAULT_TASK_TIMEOUT_SECONDS = 50 * 60
 
 MODEL_NAME_ALIASES = {
+    "gpt-4.1": "openai/gpt-4.1-2025-04-14",
+    "openai/gpt-4.1": "openai/gpt-4.1-2025-04-14",
+    "gpt-4.1-mini": "openai/gpt-4.1-mini-2025-04-14",
+    "openai/gpt-4.1-mini": "openai/gpt-4.1-mini-2025-04-14",
+    "gpt-4.1-nano": "openai/gpt-4.1-nano-2025-04-14",
+    "openai/gpt-4.1-nano": "openai/gpt-4.1-nano-2025-04-14",
     "gpt-5-mini": "openai/gpt-5-mini-2025-08-07",
     "openai/gpt-5-mini": "openai/gpt-5-mini-2025-08-07",
     "openai/gpt-5-2": "openai/gpt-5.2",
@@ -73,6 +79,13 @@ def _env_int(name: str, default: int | None = None) -> int | None:
     if value is None or value == "":
         return default
     return int(value)
+
+
+def _env_float(name: str, default: float | None = None) -> float | None:
+    value = os.environ.get(name)
+    if value is None or value == "":
+        return default
+    return float(value)
 
 
 def _env_bool(name: str, default: bool) -> bool:
@@ -209,6 +222,28 @@ def _matching_webarena_indices_from_metadata(
     return matched_indices
 
 
+def _load_webarena_metadata_by_task_id(metadata_json_path: str) -> dict[int, dict]:
+    try:
+        with open(metadata_json_path, "r", encoding="utf-8") as f:
+            metadata = json.load(f)
+    except OSError as exc:
+        raise SystemExit(f"Failed reading metadata JSON {metadata_json_path!r}: {exc}") from exc
+    except json.JSONDecodeError as exc:
+        raise SystemExit(f"Invalid metadata JSON {metadata_json_path!r}: {exc}") from exc
+
+    if not isinstance(metadata, list):
+        raise SystemExit(f"Metadata JSON {metadata_json_path!r} must contain a list of tasks.")
+
+    metadata_by_task_id: dict[int, dict] = {}
+    for item in metadata:
+        if not isinstance(item, dict):
+            continue
+        task_id = item.get("task_id")
+        if isinstance(task_id, int):
+            metadata_by_task_id[task_id] = item
+    return metadata_by_task_id
+
+
 def _print_wa_env_warning() -> None:
     missing = [key for key in REQUIRED_WA_ENV_VARS if not os.environ.get(key)]
     if missing:
@@ -338,6 +373,24 @@ def _parse_args() -> argparse.Namespace:
         help="Run browser headless.",
     )
     parser.add_argument(
+        "--pre-observation-delay",
+        type=float,
+        default=_env_float("WEBARENA_PRE_OBSERVATION_DELAY"),
+        help=(
+            "Optional BrowserGym pre_observation_delay in seconds for all selected tasks. "
+            "Useful when app state persists a bit after a click."
+        ),
+    )
+    parser.add_argument(
+        "--reddit-pre-observation-delay",
+        type=float,
+        default=_env_float("WEBARENA_REDDIT_PRE_OBSERVATION_DELAY", 4.0),
+        help=(
+            "BrowserGym pre_observation_delay override in seconds for tasks whose metadata "
+            "includes the reddit site. Defaults to 4.0s to reduce false negatives on Postmill."
+        ),
+    )
+    parser.add_argument(
         "--ignore-dependencies",
         type=_str2bool,
         default=_env_bool("WEBARENA_IGNORE_DEPENDENCIES", False),
@@ -383,6 +436,7 @@ def main() -> None:
 
     benchmark = bgym.DEFAULT_BENCHMARKS[args.benchmark]()
     env_args_list = list(benchmark.env_args_list)
+    metadata_by_task_id = _load_webarena_metadata_by_task_id(args.metadata_json_path)
     print(f"Loaded benchmark {benchmark.name!r} with {len(env_args_list)} tasks")
 
     if task_ids:
@@ -473,11 +527,36 @@ def main() -> None:
     log_reasoning_effort_reminder(generic_agent)
 
     benchmark.env_args_list = env_args_list
+    reddit_delay_applied = 0
+    global_delay_applied = 0
     for env_args in benchmark.env_args_list:
         env_args.headless = args.headless
         env_args.max_steps = args.max_steps
+        task_num = _task_number(getattr(env_args, "task_name", ""))
+
+        if args.pre_observation_delay is not None:
+            env_args.pre_observation_delay = args.pre_observation_delay
+            global_delay_applied += 1
+
+        if (
+            args.reddit_pre_observation_delay is not None
+            and task_num is not None
+            and "reddit" in metadata_by_task_id.get(task_num, {}).get("sites", [])
+        ):
+            env_args.pre_observation_delay = args.reddit_pre_observation_delay
+            reddit_delay_applied += 1
 
     print(f"Final selected tasks: {len(benchmark.env_args_list)}")
+    if args.pre_observation_delay is not None:
+        print(
+            "Applied global pre_observation_delay="
+            f"{args.pre_observation_delay}s to {global_delay_applied} selected tasks"
+        )
+    if args.reddit_pre_observation_delay is not None:
+        print(
+            "Applied reddit pre_observation_delay="
+            f"{args.reddit_pre_observation_delay}s to {reddit_delay_applied} selected tasks"
+        )
     preview = [_full_task_id(ea) for ea in benchmark.env_args_list[:20]]
     print("Task preview (up to 20):")
     for task_id in preview:

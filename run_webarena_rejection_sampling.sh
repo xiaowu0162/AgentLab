@@ -10,6 +10,54 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PYTHON_BIN="${PYTHON_BIN:-python}"
 
+# Keep older Chromium revisions from being garbage-collected when multiple
+# Playwright versions coexist on the same machine.
+export PLAYWRIGHT_SKIP_BROWSER_GC="${PLAYWRIGHT_SKIP_BROWSER_GC:-1}"
+# Isolate this harness from global ~/.cache/ms-playwright churn.
+PLAYWRIGHT_BROWSERS_PATH_DEFAULT="${HOME}/.cache/ms-playwright-agentlab-pw144"
+export PLAYWRIGHT_BROWSERS_PATH="${PLAYWRIGHT_BROWSERS_PATH:-${PLAYWRIGHT_BROWSERS_PATH_DEFAULT}}"
+mkdir -p "${PLAYWRIGHT_BROWSERS_PATH}"
+
+if ! PLAYWRIGHT_CHECK_OUTPUT="$("${PYTHON_BIN}" - <<'PY' 2>&1
+import os
+import sys
+from importlib import metadata
+
+try:
+    import playwright
+    from playwright.sync_api import sync_playwright
+except Exception as exc:
+    print(f"PLAYWRIGHT_IMPORT_ERROR={exc}")
+    raise SystemExit(2)
+
+with sync_playwright() as pw:
+    chromium_executable = pw.chromium.executable_path
+
+print(f"PYTHON_EXECUTABLE={sys.executable}")
+print(f"PLAYWRIGHT_VERSION={metadata.version('playwright')}")
+print(f"PLAYWRIGHT_BROWSERS_PATH={os.environ.get('PLAYWRIGHT_BROWSERS_PATH', '')}")
+print(f"CHROMIUM_EXECUTABLE={chromium_executable}")
+print(f"CHROMIUM_EXISTS={int(os.path.exists(chromium_executable))}")
+PY
+)"; then
+  echo "Failed Playwright preflight check using PYTHON_BIN=${PYTHON_BIN}:"
+  echo "${PLAYWRIGHT_CHECK_OUTPUT}"
+  echo
+  echo "Install Playwright with the same interpreter used by this script:"
+  echo "  ${PYTHON_BIN} -m pip install \"playwright==1.44.0\""
+  echo "  PLAYWRIGHT_BROWSERS_PATH=${PLAYWRIGHT_BROWSERS_PATH} ${PYTHON_BIN} -m playwright install chromium"
+  exit 1
+fi
+
+echo "${PLAYWRIGHT_CHECK_OUTPUT}"
+
+if [[ "${PLAYWRIGHT_CHECK_OUTPUT}" == *"CHROMIUM_EXISTS=0"* ]]; then
+  echo "Missing Chromium binary for this Playwright environment."
+  echo "Install it (into the isolated cache) with:"
+  echo "  PLAYWRIGHT_BROWSERS_PATH=${PLAYWRIGHT_BROWSERS_PATH} ${PYTHON_BIN} -m playwright install chromium"
+  exit 1
+fi
+
 # HOST="${1:-${WA_HOST:-}}"
 HOST=localhost
 #if [[ -z "${HOST}" ]]; then
@@ -59,13 +107,19 @@ export WA_HOMEPAGE="http://${HOST}:${HOMEPAGE_PORT}"
 
 # Runner defaults (override via env if desired)
 export WEBARENA_BENCHMARK="${WEBARENA_BENCHMARK:-webarena}"
-export WEBARENA_MODEL_NAME="${WEBARENA_MODEL_NAME:-openai/gpt-5-mini-2025-08-07}"
+# export WEBARENA_MODEL_NAME="${WEBARENA_MODEL_NAME:-openai/gpt-5-mini-2025-08-07}"
+export WEBARENA_MODEL_NAME="${WEBARENA_MODEL_NAME:-openai/gpt-5.2}"
+# export WEBARENA_MODEL_NAME="${WEBARENA_MODEL_NAME:-openai/gpt-4.1-mini}"
 export WEBARENA_REASONING_EFFORT="${WEBARENA_REASONING_EFFORT:-high}"
 export WEBARENA_N_JOBS="${WEBARENA_N_JOBS:-5}"
 export WEBARENA_MAX_STEPS="${WEBARENA_MAX_STEPS:-50}"
 export WEBARENA_TASK_TIMEOUT_SECONDS="${WEBARENA_TASK_TIMEOUT_SECONDS:-3000}"
 export WEBARENA_PARALLEL_BACKEND="${WEBARENA_PARALLEL_BACKEND:-ray}"
 export WEBARENA_HEADLESS="${WEBARENA_HEADLESS:-true}"
+export WEBARENA_IGNORE_DEPENDENCIES="${WEBARENA_IGNORE_DEPENDENCIES:-true}"
+# Postmill mutations often persist slightly after the visible click state changes.
+# Use a longer settle before validation for reddit tasks to reduce false negatives.
+export WEBARENA_REDDIT_PRE_OBSERVATION_DELAY="${WEBARENA_REDDIT_PRE_OBSERVATION_DELAY:-4.0}"
 
 EXTRA_ARGS=("$@")
 HAS_TASK_IDS_JSON_FLAG=0
