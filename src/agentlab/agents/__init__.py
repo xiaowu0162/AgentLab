@@ -13,6 +13,9 @@ This module contains the agent implementations for AgentLab. With currently:
 
 - ManualActionAgent: A terminal-driven agent that asks a human/coding operator
   for each next action while preserving standard AgentLab trajectories
+
+- ReplayActionAgent: A deterministic agent that replays previously recorded
+  BrowserGym action strings to regenerate environment-side artifacts
 """
 
 from agentlab.agents.cheating_agent import CHEATING_AGENT, CheatingAgentArgs
@@ -21,3 +24,4 @@ from agentlab.agents.cheating_custom_agent import (
     CheatingCustomAgentArgs,
 )
 from agentlab.agents.manual_action_agent import MANUAL_ACTION_AGENT, ManualActionAgentArgs
+from agentlab.agents.replay_action_agent import ReplayActionAgentArgs

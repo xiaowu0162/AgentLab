@@ -36,6 +36,25 @@ logger = logging.getLogger(__name__)
 SEED_MAX = 2 ^ 32  # arbitrary max value (exclusive), seems large enough
 
 
+def _install_runtime_patches_for_task(task_name: str) -> None:
+    if not isinstance(task_name, str):
+        return
+    if not task_name.startswith("webarena"):
+        return
+
+    try:
+        from agentlab.experiments.webarena_eval_patch import (
+            install_webarena_html_evaluator_patch,
+            install_webarena_string_evaluator_patch,
+        )
+    except Exception:
+        logger.debug("Failed to import WebArena runtime patches.", exc_info=True)
+        return
+
+    install_webarena_html_evaluator_patch()
+    install_webarena_string_evaluator_patch()
+
+
 def _get_model_args_from_agent_args(agent_args):
     for attr in ("chat_model_args", "model_args"):
         model_args = getattr(agent_args, attr, None)
@@ -465,6 +484,7 @@ class ExpArgs:
         try:
             logger.info(f"Running experiment {self.exp_name} in:\n  {self.exp_dir}")
             log_reasoning_effort_reminder(self.agent_args)
+            _install_runtime_patches_for_task(self.env_args.task_name)
             agent = self.agent_args.make_agent()
             if hasattr(agent, "set_task_name"):
                 agent.set_task_name(self.env_args.task_name)
