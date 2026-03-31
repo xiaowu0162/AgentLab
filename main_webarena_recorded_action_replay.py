@@ -23,7 +23,9 @@ os.environ.pop("SNOW_INSTANCE_URL", None)
 os.environ.pop("SNOW_INSTANCE_UNAME", None)
 os.environ.setdefault(
     "AGENTLAB_EXP_ROOT",
-    os.path.join(os.path.dirname(__file__), "..", "..", "web", "agentlab_results_replay"),
+    os.path.join(
+        os.path.dirname(__file__), "..", "..", "web", "agentlab_results_replay", "to_verify"
+    ),
 )
 
 import bgym

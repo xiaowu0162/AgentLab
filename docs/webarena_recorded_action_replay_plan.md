@@ -1,5 +1,20 @@
 # WebArena Recorded-Action Replay Plan
 
+## Layout Note
+
+The replay directory layout has since been split:
+
+- raw replay batches now land under
+  `web/agentlab_results_replay/to_verify/`
+- accepted per-folder outputs now live under
+  `web/agentlab_results_replay/final/`
+- archived bad or replaced trajectories live under
+  `web/agentlab_results_replay/failed_runs/`
+
+For the current end-to-end workflow, use:
+
+- [webarena_hybrid_replay_manual_recovery.md](/home/diwu/ralm/LongMemEval-V2-Workspace/enterprise/AgentLab/docs/webarena_hybrid_replay_manual_recovery.md)
+
 ## Goal
 
 Regenerate WebArena screenshots with a taller viewport while keeping the
@@ -22,7 +37,7 @@ Replay support now lives in two places:
     `result_df.csv`, `summary_df.csv`, `error_report.md`, and
     `replay_manifest.json`
   - uses the exact source study directory basename under
-    `web/agentlab_results_replay/` by default
+    `web/agentlab_results_replay/to_verify/` by default
   - deduplicates retry directories by `task_name` before replay
   - uses Ray plus the WebArena task dependency graph for safe parallelism
 - `run_webarena_recorded_action_replay.sh`
@@ -61,7 +76,7 @@ per-task restarts for that study only.
 When replaying a whole source study directory, the replay batch lands at:
 
 ```text
-web/agentlab_results_replay/<same-source-study-dir-name>
+web/agentlab_results_replay/to_verify/<same-source-study-dir-name>
 ```
 
 Example:
@@ -73,7 +88,7 @@ web/agentlab_results/2026-02-16_18-13-18_genericagent-gpt-5-mini-2025-08-07-on-w
 replays into:
 
 ```text
-web/agentlab_results_replay/2026-02-16_18-13-18_genericagent-gpt-5-mini-2025-08-07-on-webarena
+web/agentlab_results_replay/to_verify/2026-02-16_18-13-18_genericagent-gpt-5-mini-2025-08-07-on-webarena
 ```
 
 The replay script now refuses to reuse an existing output directory. Remove or

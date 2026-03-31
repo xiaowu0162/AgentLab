@@ -36,7 +36,7 @@ if [[ $# -gt 0 ]]; then
   shift
 fi
 
-export AGENTLAB_EXP_ROOT="${AGENTLAB_EXP_ROOT:-${SCRIPT_DIR}/../../web/agentlab_results_replay}"
+export AGENTLAB_EXP_ROOT="${AGENTLAB_EXP_ROOT:-${SCRIPT_DIR}/../../web/agentlab_results_replay/to_verify}"
 mkdir -p "${AGENTLAB_EXP_ROOT}"
 
 SHOPPING_PORT="${SHOPPING_PORT:-9082}"
